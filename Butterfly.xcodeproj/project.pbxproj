@@ -1,0 +1,602 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		22200310218EC6A900481176 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2220030F218EC6A900481176 /* AppDelegate.swift */; };
+		22200312218EC6A900481176 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22200311218EC6A900481176 /* ViewController.swift */; };
+		22200315218EC6A900481176 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22200313218EC6A900481176 /* Main.storyboard */; };
+		22200318218EC6A900481176 /* Butterfly.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 22200316218EC6A900481176 /* Butterfly.xcdatamodeld */; };
+		2220031A218EC6AB00481176 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22200319218EC6AB00481176 /* Assets.xcassets */; };
+		2220031D218EC6AB00481176 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2220031B218EC6AB00481176 /* LaunchScreen.storyboard */; };
+		22200328218EC6AB00481176 /* ButterflyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22200327218EC6AB00481176 /* ButterflyTests.swift */; };
+		22200333218EC6AB00481176 /* ButterflyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22200332218EC6AB00481176 /* ButterflyUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		22200324218EC6AB00481176 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 22200304218EC6A900481176 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2220030B218EC6A900481176;
+			remoteInfo = Butterfly;
+		};
+		2220032F218EC6AB00481176 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 22200304218EC6A900481176 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2220030B218EC6A900481176;
+			remoteInfo = Butterfly;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2220030C218EC6A900481176 /* Butterfly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Butterfly.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2220030F218EC6A900481176 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		22200311218EC6A900481176 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		22200314218EC6A900481176 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		22200317218EC6A900481176 /* Butterfly.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Butterfly.xcdatamodel; sourceTree = "<group>"; };
+		22200319218EC6AB00481176 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2220031C218EC6AB00481176 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2220031E218EC6AB00481176 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22200323218EC6AB00481176 /* ButterflyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ButterflyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		22200327218EC6AB00481176 /* ButterflyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButterflyTests.swift; sourceTree = "<group>"; };
+		22200329218EC6AB00481176 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2220032E218EC6AB00481176 /* ButterflyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ButterflyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		22200332218EC6AB00481176 /* ButterflyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButterflyUITests.swift; sourceTree = "<group>"; };
+		22200334218EC6AB00481176 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		22200309218EC6A900481176 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22200320218EC6AB00481176 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2220032B218EC6AB00481176 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		22200303218EC6A900481176 = {
+			isa = PBXGroup;
+			children = (
+				2220030E218EC6A900481176 /* Butterfly */,
+				22200326218EC6AB00481176 /* ButterflyTests */,
+				22200331218EC6AB00481176 /* ButterflyUITests */,
+				2220030D218EC6A900481176 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2220030D218EC6A900481176 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2220030C218EC6A900481176 /* Butterfly.app */,
+				22200323218EC6AB00481176 /* ButterflyTests.xctest */,
+				2220032E218EC6AB00481176 /* ButterflyUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2220030E218EC6A900481176 /* Butterfly */ = {
+			isa = PBXGroup;
+			children = (
+				2220030F218EC6A900481176 /* AppDelegate.swift */,
+				22200311218EC6A900481176 /* ViewController.swift */,
+				22200313218EC6A900481176 /* Main.storyboard */,
+				22200319218EC6AB00481176 /* Assets.xcassets */,
+				2220031B218EC6AB00481176 /* LaunchScreen.storyboard */,
+				2220031E218EC6AB00481176 /* Info.plist */,
+				22200316218EC6A900481176 /* Butterfly.xcdatamodeld */,
+			);
+			path = Butterfly;
+			sourceTree = "<group>";
+		};
+		22200326218EC6AB00481176 /* ButterflyTests */ = {
+			isa = PBXGroup;
+			children = (
+				22200327218EC6AB00481176 /* ButterflyTests.swift */,
+				22200329218EC6AB00481176 /* Info.plist */,
+			);
+			path = ButterflyTests;
+			sourceTree = "<group>";
+		};
+		22200331218EC6AB00481176 /* ButterflyUITests */ = {
+			isa = PBXGroup;
+			children = (
+				22200332218EC6AB00481176 /* ButterflyUITests.swift */,
+				22200334218EC6AB00481176 /* Info.plist */,
+			);
+			path = ButterflyUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2220030B218EC6A900481176 /* Butterfly */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 22200337218EC6AC00481176 /* Build configuration list for PBXNativeTarget "Butterfly" */;
+			buildPhases = (
+				22200308218EC6A900481176 /* Sources */,
+				22200309218EC6A900481176 /* Frameworks */,
+				2220030A218EC6A900481176 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Butterfly;
+			productName = Butterfly;
+			productReference = 2220030C218EC6A900481176 /* Butterfly.app */;
+			productType = "com.apple.product-type.application";
+		};
+		22200322218EC6AB00481176 /* ButterflyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2220033A218EC6AC00481176 /* Build configuration list for PBXNativeTarget "ButterflyTests" */;
+			buildPhases = (
+				2220031F218EC6AB00481176 /* Sources */,
+				22200320218EC6AB00481176 /* Frameworks */,
+				22200321218EC6AB00481176 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				22200325218EC6AB00481176 /* PBXTargetDependency */,
+			);
+			name = ButterflyTests;
+			productName = ButterflyTests;
+			productReference = 22200323218EC6AB00481176 /* ButterflyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2220032D218EC6AB00481176 /* ButterflyUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2220033D218EC6AC00481176 /* Build configuration list for PBXNativeTarget "ButterflyUITests" */;
+			buildPhases = (
+				2220032A218EC6AB00481176 /* Sources */,
+				2220032B218EC6AB00481176 /* Frameworks */,
+				2220032C218EC6AB00481176 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				22200330218EC6AB00481176 /* PBXTargetDependency */,
+			);
+			name = ButterflyUITests;
+			productName = ButterflyUITests;
+			productReference = 2220032E218EC6AB00481176 /* ButterflyUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		22200304218EC6A900481176 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Songbai Yan ";
+				TargetAttributes = {
+					2220030B218EC6A900481176 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					22200322218EC6AB00481176 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 2220030B218EC6A900481176;
+					};
+					2220032D218EC6AB00481176 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 2220030B218EC6A900481176;
+					};
+				};
+			};
+			buildConfigurationList = 22200307218EC6A900481176 /* Build configuration list for PBXProject "Butterfly" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 22200303218EC6A900481176;
+			productRefGroup = 2220030D218EC6A900481176 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2220030B218EC6A900481176 /* Butterfly */,
+				22200322218EC6AB00481176 /* ButterflyTests */,
+				2220032D218EC6AB00481176 /* ButterflyUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2220030A218EC6A900481176 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2220031D218EC6AB00481176 /* LaunchScreen.storyboard in Resources */,
+				2220031A218EC6AB00481176 /* Assets.xcassets in Resources */,
+				22200315218EC6A900481176 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22200321218EC6AB00481176 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2220032C218EC6AB00481176 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		22200308218EC6A900481176 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22200312218EC6A900481176 /* ViewController.swift in Sources */,
+				22200310218EC6A900481176 /* AppDelegate.swift in Sources */,
+				22200318218EC6A900481176 /* Butterfly.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2220031F218EC6AB00481176 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22200328218EC6AB00481176 /* ButterflyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2220032A218EC6AB00481176 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22200333218EC6AB00481176 /* ButterflyUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		22200325218EC6AB00481176 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2220030B218EC6A900481176 /* Butterfly */;
+			targetProxy = 22200324218EC6AB00481176 /* PBXContainerItemProxy */;
+		};
+		22200330218EC6AB00481176 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2220030B218EC6A900481176 /* Butterfly */;
+			targetProxy = 2220032F218EC6AB00481176 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		22200313218EC6A900481176 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				22200314218EC6A900481176 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2220031B218EC6AB00481176 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2220031C218EC6AB00481176 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		22200335218EC6AB00481176 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		22200336218EC6AB00481176 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		22200338218EC6AC00481176 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Butterfly/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.woodystudio.Butterfly;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		22200339218EC6AC00481176 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Butterfly/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.woodystudio.Butterfly;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		2220033B218EC6AC00481176 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ButterflyTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.woodystudio.ButterflyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Butterfly.app/Butterfly";
+			};
+			name = Debug;
+		};
+		2220033C218EC6AC00481176 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ButterflyTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.woodystudio.ButterflyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Butterfly.app/Butterfly";
+			};
+			name = Release;
+		};
+		2220033E218EC6AC00481176 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ButterflyUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.woodystudio.ButterflyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Butterfly;
+			};
+			name = Debug;
+		};
+		2220033F218EC6AC00481176 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ButterflyUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.woodystudio.ButterflyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Butterfly;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		22200307218EC6A900481176 /* Build configuration list for PBXProject "Butterfly" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22200335218EC6AB00481176 /* Debug */,
+				22200336218EC6AB00481176 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		22200337218EC6AC00481176 /* Build configuration list for PBXNativeTarget "Butterfly" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22200338218EC6AC00481176 /* Debug */,
+				22200339218EC6AC00481176 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2220033A218EC6AC00481176 /* Build configuration list for PBXNativeTarget "ButterflyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2220033B218EC6AC00481176 /* Debug */,
+				2220033C218EC6AC00481176 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2220033D218EC6AC00481176 /* Build configuration list for PBXNativeTarget "ButterflyUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2220033E218EC6AC00481176 /* Debug */,
+				2220033F218EC6AC00481176 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		22200316218EC6A900481176 /* Butterfly.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				22200317218EC6A900481176 /* Butterfly.xcdatamodel */,
+			);
+			currentVersion = 22200317218EC6A900481176 /* Butterfly.xcdatamodel */;
+			path = Butterfly.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 22200304218EC6A900481176 /* Project object */;
+}
