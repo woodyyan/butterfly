@@ -15,6 +15,8 @@
 		2220031D218EC6AB00481176 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2220031B218EC6AB00481176 /* LaunchScreen.storyboard */; };
 		22200328218EC6AB00481176 /* ButterflyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22200327218EC6AB00481176 /* ButterflyTests.swift */; };
 		22200333218EC6AB00481176 /* ButterflyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22200332218EC6AB00481176 /* ButterflyUITests.swift */; };
+		22ABC2F221909F0C006062BC /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 22ABC2F121909F0C006062BC /* .gitignore */; };
+		3D00ECC244A9F7BAD1CC0C15 /* Pods_Butterfly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD0185198D225CA3F957A31E /* Pods_Butterfly.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,10 @@
 		2220032E218EC6AB00481176 /* ButterflyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ButterflyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22200332218EC6AB00481176 /* ButterflyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButterflyUITests.swift; sourceTree = "<group>"; };
 		22200334218EC6AB00481176 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22ABC2F121909F0C006062BC /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		75C54B338CE37D457FEF820D /* Pods-Butterfly.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Butterfly.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Butterfly/Pods-Butterfly.debug.xcconfig"; sourceTree = "<group>"; };
+		C5C962A36C2F78285E364CB5 /* Pods-Butterfly.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Butterfly.release.xcconfig"; path = "Pods/Target Support Files/Pods-Butterfly/Pods-Butterfly.release.xcconfig"; sourceTree = "<group>"; };
+		CD0185198D225CA3F957A31E /* Pods_Butterfly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Butterfly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D00ECC244A9F7BAD1CC0C15 /* Pods_Butterfly.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,10 +86,13 @@
 		22200303218EC6A900481176 = {
 			isa = PBXGroup;
 			children = (
+				22ABC2F121909F0C006062BC /* .gitignore */,
 				2220030E218EC6A900481176 /* Butterfly */,
 				22200326218EC6AB00481176 /* ButterflyTests */,
 				22200331218EC6AB00481176 /* ButterflyUITests */,
 				2220030D218EC6A900481176 /* Products */,
+				6F39E32AB6AC8E08A0511869 /* Pods */,
+				848FEE9ECA8F4BF2AADB341C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,6 +138,23 @@
 			path = ButterflyUITests;
 			sourceTree = "<group>";
 		};
+		6F39E32AB6AC8E08A0511869 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				75C54B338CE37D457FEF820D /* Pods-Butterfly.debug.xcconfig */,
+				C5C962A36C2F78285E364CB5 /* Pods-Butterfly.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		848FEE9ECA8F4BF2AADB341C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CD0185198D225CA3F957A31E /* Pods_Butterfly.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +162,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 22200337218EC6AC00481176 /* Build configuration list for PBXNativeTarget "Butterfly" */;
 			buildPhases = (
+				DB89F0C51C1745127C36F2D5 /* [CP] Check Pods Manifest.lock */,
 				22200308218EC6A900481176 /* Sources */,
 				22200309218EC6A900481176 /* Frameworks */,
 				2220030A218EC6A900481176 /* Resources */,
+				225E46FB2190808A005F5249 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -232,6 +261,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22ABC2F221909F0C006062BC /* .gitignore in Resources */,
 				2220031D218EC6AB00481176 /* LaunchScreen.storyboard in Resources */,
 				2220031A218EC6AB00481176 /* Assets.xcassets in Resources */,
 				22200315218EC6A900481176 /* Main.storyboard in Resources */,
@@ -253,6 +283,44 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		225E46FB2190808A005F5249 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		DB89F0C51C1745127C36F2D5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Butterfly-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		22200308218EC6A900481176 /* Sources */ = {
@@ -434,11 +502,13 @@
 		};
 		22200338218EC6AC00481176 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75C54B338CE37D457FEF820D /* Pods-Butterfly.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XD7JAMNS86;
 				INFOPLIST_FILE = Butterfly/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -452,11 +522,13 @@
 		};
 		22200339218EC6AC00481176 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C5C962A36C2F78285E364CB5 /* Pods-Butterfly.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XD7JAMNS86;
 				INFOPLIST_FILE = Butterfly/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
