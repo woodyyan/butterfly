@@ -2,6 +2,7 @@ disabled_rules: # 执行时排除掉的规则
 - trailing_whitespace
 - force_cast
 - identifier_name
+- missing_docs
 #- control_statement
 opt_in_rules: # 一些规则仅仅是可选的
 - empty_count
