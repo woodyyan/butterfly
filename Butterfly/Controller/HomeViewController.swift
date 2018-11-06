@@ -21,17 +21,49 @@ class HomeViewController: UITableViewController {
         self.title = "青娥"
         self.tableView.backgroundColor = UIColor.background
         self.navigationController?.navigationBar.barTintColor = UIColor.background
-        self.navigationController?.navigationBar.tintColor = UIColor.background
+//        self.navigationController?.navigationBar.tintColor = UIColor.background
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.themeColor]
         self.navigationController?.navigationBar.tintColor = UIColor.themeColor
         
         let rightItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(HomeViewController.pushToSettingsPage(_:)))
         self.navigationItem.rightBarButtonItem = rightItem
         self.navigationItem.rightBarButtonItem?.tintColor = UIColor.themeColor
+        
+        self.tableView = UITableView(frame: self.tableView.frame, style: UITableView.Style.grouped)
+        self.tableView.backgroundColor = UIColor.background
+        self.tableView.separatorStyle = .none
+        self.tableView.register(ImageScrollTalbeCell.self, forCellReuseIdentifier: "cell")
+        self.tableView.tableFooterView = UIView(frame: CGRect.zero)
     }
     
     @objc func pushToSettingsPage(_ sender: UIBarButtonItem) {
 //        let settingsController = SettingsViewController()
 //        self.navigationController?.pushViewController(settingsController, animated: true)
+    }
+}
+
+extension HomeViewController {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.backgroundColor = UIColor.background
+        cell.textLabel?.text = "112"
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let titleLabel = UILabel()
+        titleLabel.text = "today" //TODO 数据输入
+        titleLabel.font = UIFont.systemFont(ofSize: 12)
+        titleLabel.textAlignment = .center
+        titleLabel.textColor = UIColor.darkRed
+        return titleLabel
+    }
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
     }
 }

@@ -20,6 +20,10 @@ extension UIColor {
         return UIColor(red: 62, green: 67, blue: 72)!
     }
     
+    public static var darkRed: UIColor {
+        return UIColor(red: 175, green: 64, blue: 52)!
+    }
+    
     public convenience init?(red: Int, green: Int, blue: Int, transparency: CGFloat = 1) {
         guard red >= 0 && red <= 255 else { return nil }
         guard green >= 0 && green <= 255 else { return nil }
