@@ -20,6 +20,7 @@
 		22ABC2F7219137D6006062BC /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 22ABC2F6219137D6006062BC /* .swiftlint.yml */; };
 		22ABC2FA2191398A006062BC /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ABC2F92191398A006062BC /* UIColorExtension.swift */; };
 		22ABC2FD219164CF006062BC /* ImageScrollTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ABC2FC219164CF006062BC /* ImageScrollTableCell.swift */; };
+		22ABC2FF2192D8CB006062BC /* TapImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ABC2FE2192D8CB006062BC /* TapImageView.swift */; };
 		3D00ECC244A9F7BAD1CC0C15 /* Pods_Butterfly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD0185198D225CA3F957A31E /* Pods_Butterfly.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,7 @@
 		22ABC2F6219137D6006062BC /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		22ABC2F92191398A006062BC /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		22ABC2FC219164CF006062BC /* ImageScrollTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageScrollTableCell.swift; sourceTree = "<group>"; };
+		22ABC2FE2192D8CB006062BC /* TapImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapImageView.swift; sourceTree = "<group>"; };
 		75C54B338CE37D457FEF820D /* Pods-Butterfly.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Butterfly.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Butterfly/Pods-Butterfly.debug.xcconfig"; sourceTree = "<group>"; };
 		C5C962A36C2F78285E364CB5 /* Pods-Butterfly.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Butterfly.release.xcconfig"; path = "Pods/Target Support Files/Pods-Butterfly/Pods-Butterfly.release.xcconfig"; sourceTree = "<group>"; };
 		CD0185198D225CA3F957A31E /* Pods_Butterfly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Butterfly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -170,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				22ABC2FC219164CF006062BC /* ImageScrollTableCell.swift */,
+				22ABC2FE2192D8CB006062BC /* TapImageView.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 				22200312218EC6A900481176 /* ViewController.swift in Sources */,
 				22ABC2FD219164CF006062BC /* ImageScrollTableCell.swift in Sources */,
 				22200310218EC6A900481176 /* AppDelegate.swift in Sources */,
+				22ABC2FF2192D8CB006062BC /* TapImageView.swift in Sources */,
 				22ABC2FA2191398A006062BC /* UIColorExtension.swift in Sources */,
 				22200318218EC6A900481176 /* Butterfly.xcdatamodeld in Sources */,
 				22ABC2F52191376B006062BC /* HomeViewController.swift in Sources */,

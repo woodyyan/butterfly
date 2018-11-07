@@ -14,6 +14,7 @@ class ImageScrollTalbeCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
+        self.selectionStyle = .none
         initUI()
     }
     
@@ -53,7 +54,7 @@ class ImageScrollTalbeCell: UITableViewCell {
         let height = 150
         let margin = 10
         for index in 0...9 {
-            let imageView = buildImageView()
+            let imageView = TapImageView(image: #imageLiteral(resourceName: "2"))
             imageView.frame = CGRect(x: index*(width+margin) + margin, y: margin, width: width, height: height)
             scrollView.addSubview(imageView)
         }
@@ -63,13 +64,5 @@ class ImageScrollTalbeCell: UITableViewCell {
         scrollView.showsVerticalScrollIndicator = false
         
         return scrollView
-    }
-    
-    private func buildImageView() -> UIImageView {
-        let imageView = UIImageView(image: #imageLiteral(resourceName: "2"))
-        imageView.layer.cornerRadius = 6
-        imageView.layer.masksToBounds = true
-        
-        return imageView
     }
 }
