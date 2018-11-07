@@ -48,7 +48,6 @@ class ImageScrollTalbeCell: UITableViewCell {
     
     private func buildScrollView() -> UIScrollView {
         let scrollView = UIScrollView()
-        scrollView.backgroundColor = UIColor.themeColor
         
         let width = 100
         let height = 150
@@ -67,8 +66,9 @@ class ImageScrollTalbeCell: UITableViewCell {
     }
     
     private func buildImageView() -> UIImageView {
-        let imageView = UIImageView()
-        imageView.backgroundColor = UIColor.green
+        let imageView = UIImageView(image: #imageLiteral(resourceName: "2"))
+        imageView.layer.cornerRadius = 6
+        imageView.layer.masksToBounds = true
         
         return imageView
     }
