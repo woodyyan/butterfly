@@ -11,6 +11,9 @@ import UIKit
 import SnapKit
 
 class ImageScrollTalbeCell: UITableViewCell {
+    
+    weak var delegate: ImageScrollTableCellDelegate?
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -55,6 +58,7 @@ class ImageScrollTalbeCell: UITableViewCell {
         let margin = 10
         for index in 0...9 {
             let imageView = TapImageView(image: #imageLiteral(resourceName: "2"))
+            imageView.delegate = self
             imageView.frame = CGRect(x: index*(width+margin) + margin, y: margin, width: width, height: height)
             scrollView.addSubview(imageView)
         }
@@ -64,5 +68,15 @@ class ImageScrollTalbeCell: UITableViewCell {
         scrollView.showsVerticalScrollIndicator = false
         
         return scrollView
+    }
+}
+
+protocol ImageScrollTableCellDelegate: NSObjectProtocol {
+    func imageScrollTableCell(tableCell: ImageScrollTalbeCell, data: Any?)
+}
+
+extension ImageScrollTalbeCell: TapImageViewDelegate {
+    func tapImageView(imageView: TapImageView, data: Any?) {
+        self.delegate?.imageScrollTableCell(tableCell: self, data: data)
     }
 }

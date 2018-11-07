@@ -10,6 +10,9 @@ import Foundation
 import UIKit
 
 class TapImageView: UIImageView {
+    
+    weak var delegate: TapImageViewDelegate?
+    
     override init(image: UIImage?) {
         super.init(image: image)
         
@@ -26,6 +29,10 @@ class TapImageView: UIImageView {
     }
     
     @objc func tapImage(_ sender: UITapGestureRecognizer) {
-        print(9)
+        delegate?.tapImageView(imageView: self, data: nil)
     }
+}
+
+protocol TapImageViewDelegate: NSObjectProtocol {
+    func tapImageView(imageView: TapImageView, data: Any?)
 }
