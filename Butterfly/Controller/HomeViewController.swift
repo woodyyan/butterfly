@@ -45,8 +45,6 @@ class HomeViewController: UITableViewController {
 extension HomeViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.backgroundColor = UIColor.background
-        cell.textLabel?.text = "112"
         return cell
     }
     
@@ -57,6 +55,10 @@ extension HomeViewController {
         titleLabel.textAlignment = .center
         titleLabel.textColor = UIColor.darkRed
         return titleLabel
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 200
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
