@@ -22,6 +22,12 @@
 		22ABC2FD219164CF006062BC /* ImageScrollTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ABC2FC219164CF006062BC /* ImageScrollTableCell.swift */; };
 		22ABC2FF2192D8CB006062BC /* TapImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ABC2FE2192D8CB006062BC /* TapImageView.swift */; };
 		22ABC3012192E46B006062BC /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ABC3002192E46B006062BC /* SettingsViewController.swift */; };
+		22ABC305219438A7006062BC /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ABC304219438A7006062BC /* ViewModelFactory.swift */; };
+		22ABC307219438C4006062BC /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ABC306219438C4006062BC /* BaseViewModel.swift */; };
+		22ABC3092194394C006062BC /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ABC3082194394C006062BC /* SettingsViewModel.swift */; };
+		22ABC30C219439E6006062BC /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ABC30B219439E6006062BC /* Settings.swift */; };
+		22ABC30E21943A52006062BC /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ABC30D21943A52006062BC /* Section.swift */; };
+		22ABC31021943AC3006062BC /* SettingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ABC30F21943AC3006062BC /* SettingItem.swift */; };
 		3D00ECC244A9F7BAD1CC0C15 /* Pods_Butterfly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD0185198D225CA3F957A31E /* Pods_Butterfly.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +70,12 @@
 		22ABC2FC219164CF006062BC /* ImageScrollTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageScrollTableCell.swift; sourceTree = "<group>"; };
 		22ABC2FE2192D8CB006062BC /* TapImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapImageView.swift; sourceTree = "<group>"; };
 		22ABC3002192E46B006062BC /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		22ABC304219438A7006062BC /* ViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelFactory.swift; sourceTree = "<group>"; };
+		22ABC306219438C4006062BC /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		22ABC3082194394C006062BC /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		22ABC30B219439E6006062BC /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		22ABC30D21943A52006062BC /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
+		22ABC30F21943AC3006062BC /* SettingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingItem.swift; sourceTree = "<group>"; };
 		75C54B338CE37D457FEF820D /* Pods-Butterfly.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Butterfly.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Butterfly/Pods-Butterfly.debug.xcconfig"; sourceTree = "<group>"; };
 		C5C962A36C2F78285E364CB5 /* Pods-Butterfly.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Butterfly.release.xcconfig"; path = "Pods/Target Support Files/Pods-Butterfly/Pods-Butterfly.release.xcconfig"; sourceTree = "<group>"; };
 		CD0185198D225CA3F957A31E /* Pods_Butterfly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Butterfly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,6 +134,8 @@
 		2220030E218EC6A900481176 /* Butterfly */ = {
 			isa = PBXGroup;
 			children = (
+				22ABC30A219439DD006062BC /* Model */,
+				22ABC30221943885006062BC /* ViewModel */,
 				22ABC2FB219164B9006062BC /* Cell */,
 				22ABC2F82191396E006062BC /* Extension */,
 				22ABC2F32191374E006062BC /* Controller */,
@@ -178,6 +192,34 @@
 				22ABC2FE2192D8CB006062BC /* TapImageView.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		22ABC30221943885006062BC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				22ABC30321943899006062BC /* Base */,
+				22ABC3082194394C006062BC /* SettingsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		22ABC30321943899006062BC /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				22ABC304219438A7006062BC /* ViewModelFactory.swift */,
+				22ABC306219438C4006062BC /* BaseViewModel.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		22ABC30A219439DD006062BC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				22ABC30B219439E6006062BC /* Settings.swift */,
+				22ABC30D21943A52006062BC /* Section.swift */,
+				22ABC30F21943AC3006062BC /* SettingItem.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		6F39E32AB6AC8E08A0511869 /* Pods */ = {
@@ -386,11 +428,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				22200312218EC6A900481176 /* ViewController.swift in Sources */,
+				22ABC307219438C4006062BC /* BaseViewModel.swift in Sources */,
 				22ABC2FD219164CF006062BC /* ImageScrollTableCell.swift in Sources */,
 				22200310218EC6A900481176 /* AppDelegate.swift in Sources */,
 				22ABC3012192E46B006062BC /* SettingsViewController.swift in Sources */,
 				22ABC2FF2192D8CB006062BC /* TapImageView.swift in Sources */,
+				22ABC30C219439E6006062BC /* Settings.swift in Sources */,
+				22ABC31021943AC3006062BC /* SettingItem.swift in Sources */,
+				22ABC30E21943A52006062BC /* Section.swift in Sources */,
 				22ABC2FA2191398A006062BC /* UIColorExtension.swift in Sources */,
+				22ABC305219438A7006062BC /* ViewModelFactory.swift in Sources */,
+				22ABC3092194394C006062BC /* SettingsViewModel.swift in Sources */,
 				22200318218EC6A900481176 /* Butterfly.xcdatamodeld in Sources */,
 				22ABC2F52191376B006062BC /* HomeViewController.swift in Sources */,
 			);

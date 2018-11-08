@@ -17,11 +17,15 @@ extension UIColor {
     }
     
     public static var background: UIColor {
-        return UIColor(red: 62, green: 67, blue: 72)!
+        return UIColor(red: 46, green: 46, blue: 46)!
     }
     
     public static var darkRed: UIColor {
         return UIColor(red: 175, green: 64, blue: 52)!
+    }
+    
+    public static var settingCell: UIColor {
+        return UIColor(red: 65, green: 66, blue: 67)!
     }
     
     public convenience init?(red: Int, green: Int, blue: Int, transparency: CGFloat = 1) {

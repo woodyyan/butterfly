@@ -31,7 +31,6 @@ class HomeViewController: UITableViewController {
         self.tableView.backgroundColor = UIColor.background
         self.tableView.separatorStyle = .none
         self.tableView.register(ImageScrollTalbeCell.self, forCellReuseIdentifier: "cell")
-        self.tableView.tableFooterView = UIView(frame: CGRect.zero)
     }
     
     @objc func pushToSettingsPage(_ sender: UIBarButtonItem) {
