@@ -28,6 +28,9 @@
 		22ABC30C219439E6006062BC /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ABC30B219439E6006062BC /* Settings.swift */; };
 		22ABC30E21943A52006062BC /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ABC30D21943A52006062BC /* Section.swift */; };
 		22ABC31021943AC3006062BC /* SettingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ABC30F21943AC3006062BC /* SettingItem.swift */; };
+		22ABC31221953339006062BC /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ABC31121953339006062BC /* HomeViewModel.swift */; };
+		22ABC314219553CB006062BC /* ButterflyDailySet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ABC313219553CB006062BC /* ButterflyDailySet.swift */; };
+		22ABC31621955423006062BC /* Butterfly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ABC31521955423006062BC /* Butterfly.swift */; };
 		3D00ECC244A9F7BAD1CC0C15 /* Pods_Butterfly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD0185198D225CA3F957A31E /* Pods_Butterfly.framework */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +79,9 @@
 		22ABC30B219439E6006062BC /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		22ABC30D21943A52006062BC /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		22ABC30F21943AC3006062BC /* SettingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingItem.swift; sourceTree = "<group>"; };
+		22ABC31121953339006062BC /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		22ABC313219553CB006062BC /* ButterflyDailySet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButterflyDailySet.swift; sourceTree = "<group>"; };
+		22ABC31521955423006062BC /* Butterfly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Butterfly.swift; sourceTree = "<group>"; };
 		75C54B338CE37D457FEF820D /* Pods-Butterfly.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Butterfly.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Butterfly/Pods-Butterfly.debug.xcconfig"; sourceTree = "<group>"; };
 		C5C962A36C2F78285E364CB5 /* Pods-Butterfly.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Butterfly.release.xcconfig"; path = "Pods/Target Support Files/Pods-Butterfly/Pods-Butterfly.release.xcconfig"; sourceTree = "<group>"; };
 		CD0185198D225CA3F957A31E /* Pods_Butterfly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Butterfly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -199,6 +205,7 @@
 			children = (
 				22ABC30321943899006062BC /* Base */,
 				22ABC3082194394C006062BC /* SettingsViewModel.swift */,
+				22ABC31121953339006062BC /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -218,6 +225,8 @@
 				22ABC30B219439E6006062BC /* Settings.swift */,
 				22ABC30D21943A52006062BC /* Section.swift */,
 				22ABC30F21943AC3006062BC /* SettingItem.swift */,
+				22ABC313219553CB006062BC /* ButterflyDailySet.swift */,
+				22ABC31521955423006062BC /* Butterfly.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -430,6 +439,7 @@
 				22200312218EC6A900481176 /* ViewController.swift in Sources */,
 				22ABC307219438C4006062BC /* BaseViewModel.swift in Sources */,
 				22ABC2FD219164CF006062BC /* ImageScrollTableCell.swift in Sources */,
+				22ABC314219553CB006062BC /* ButterflyDailySet.swift in Sources */,
 				22200310218EC6A900481176 /* AppDelegate.swift in Sources */,
 				22ABC3012192E46B006062BC /* SettingsViewController.swift in Sources */,
 				22ABC2FF2192D8CB006062BC /* TapImageView.swift in Sources */,
@@ -440,6 +450,8 @@
 				22ABC305219438A7006062BC /* ViewModelFactory.swift in Sources */,
 				22ABC3092194394C006062BC /* SettingsViewModel.swift in Sources */,
 				22200318218EC6A900481176 /* Butterfly.xcdatamodeld in Sources */,
+				22ABC31221953339006062BC /* HomeViewModel.swift in Sources */,
+				22ABC31621955423006062BC /* Butterfly.swift in Sources */,
 				22ABC2F52191376B006062BC /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

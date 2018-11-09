@@ -24,8 +24,8 @@ class SettingsViewController: UITableViewController {
         self.title = "设置"
         self.tableView.backgroundColor = UIColor.background
         self.navigationController?.navigationBar.barTintColor = UIColor.background
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        self.navigationController?.navigationBar.tintColor = UIColor.white
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.themeColor]
+        self.navigationController?.navigationBar.tintColor = UIColor.themeColor
         
         self.tableView = UITableView(frame: self.tableView.frame, style: UITableView.Style.grouped)
         self.tableView.backgroundColor = UIColor.background

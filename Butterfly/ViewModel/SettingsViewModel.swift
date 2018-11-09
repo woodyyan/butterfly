@@ -22,7 +22,6 @@ class SettingsViewModel: BaseViewModel {
         var subscriptionItem = SettingItem(title: "订阅")
         subscriptionItem.detailText = "过期"
         subscriptionItem.icon = "subscription"
-        subscriptionItem.height = 66
         subscriptionSection.items.append(subscriptionItem)
         settings.sections.append(subscriptionSection)
         

@@ -24,6 +24,7 @@ class ViewModelFactory {
 //        let context = CoreStorage.shared.persistentContainer.viewContext
 //        let tagStorage = TagStorage(context: context)
         viewModels.append(SettingsViewModel())
+        viewModels.append(HomeViewModel())
     }
     
     func create<T>() -> T {

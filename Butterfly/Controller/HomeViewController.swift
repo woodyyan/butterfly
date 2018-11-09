@@ -10,9 +10,10 @@ import UIKit
 
 class HomeViewController: UITableViewController {
     
+    let viewModel: HomeViewModel = ViewModelFactory.shared.create()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
         initUI()
     }
@@ -43,6 +44,7 @@ extension HomeViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         if let imageCell = cell as? ImageScrollTalbeCell {
+            imageCell.initUI(butterfly: viewModel.butterflySets[indexPath.section].butterflies[indexPath.row])
             imageCell.delegate = self
         }
         return cell
@@ -50,7 +52,7 @@ extension HomeViewController {
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let titleLabel = UILabel()
-        titleLabel.text = "today" //TODO 数据输入
+        titleLabel.text = viewModel.butterflySets[section].date
         titleLabel.font = UIFont.systemFont(ofSize: 12)
         titleLabel.textAlignment = .center
         titleLabel.textColor = UIColor.darkRed
@@ -62,11 +64,11 @@ extension HomeViewController {
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return viewModel.butterflySets.count
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return viewModel.butterflySets[section].count
     }
 }
 

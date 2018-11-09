@@ -18,21 +18,21 @@ class ImageScrollTalbeCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         self.selectionStyle = .none
-        initUI()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
-    private func initUI() {
+    func initUI(butterfly: Butterfly) {
         self.backgroundColor = UIColor.background
         
         let label = UILabel()
-        label.text = "abc"
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.text = butterfly.name
         label.textColor = UIColor.themeColor
         
-        let scrollView = buildScrollView()
+        let scrollView = buildScrollView(butterfly)
         
         let cellView = UIStackView(arrangedSubviews: [label, scrollView])
         cellView.frame = self.frame
@@ -50,17 +50,19 @@ class ImageScrollTalbeCell: UITableViewCell {
         }
     }
     
-    private func buildScrollView() -> UIScrollView {
+    private func buildScrollView(_ butterfly: Butterfly) -> UIScrollView {
         let scrollView = UIScrollView()
         
         let width = 100
         let height = 150
         let margin = 10
-        for index in 0...9 {
-            let imageView = TapImageView(image: #imageLiteral(resourceName: "2"))
+        var index = 0
+        for pic in butterfly.pictures {
+            let imageView = TapImageView(image: UIImage(named: pic))
             imageView.delegate = self
             imageView.frame = CGRect(x: index*(width+margin) + margin, y: margin, width: width, height: height)
             scrollView.addSubview(imageView)
+            index += 1
         }
         
         scrollView.contentSize = CGSize(width: 70*9, height: scrollView.frame.height)
