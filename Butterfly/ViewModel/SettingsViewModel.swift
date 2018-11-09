@@ -21,26 +21,27 @@ class SettingsViewModel: BaseViewModel {
         var subscriptionSection = Section()
         var subscriptionItem = SettingItem(title: "订阅")
         subscriptionItem.detailText = "过期"
-        subscriptionItem.icon = "more"
+        subscriptionItem.icon = "subscription"
+        subscriptionItem.height = 66
         subscriptionSection.items.append(subscriptionItem)
         settings.sections.append(subscriptionSection)
         
         var favSection = Section()
         var favItem = SettingItem(title: "收藏")
         favItem.detailText = "12张"
-        favItem.icon = "more"
+        favItem.icon = "fav"
         favSection.items.append(favItem)
         settings.sections.append(favSection)
         
         var helpSection = Section()
         var shareItem = SettingItem(title: "分享")
-        shareItem.icon = "more"
+        shareItem.icon = "share"
         helpSection.items.append(shareItem)
         var commentItem = SettingItem(title: "评分")
-        commentItem.icon = "more"
+        commentItem.icon = "AppStore"
         helpSection.items.append(commentItem)
         var feedbackItem = SettingItem(title: "反馈")
-        feedbackItem.icon = "more"
+        feedbackItem.icon = "feedback"
         helpSection.items.append(feedbackItem)
         settings.sections.append(helpSection)
         

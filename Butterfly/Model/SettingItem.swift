@@ -13,6 +13,7 @@ struct SettingItem {
     var title = ""
     var detailText: String?
     var icon: String?
+    var height: CGFloat = 44
     
     init() {
     }
