@@ -83,7 +83,7 @@ extension SettingsViewController {
         } else if indexPath.section == 2 && indexPath.row == 0 {
             share()
         } else if indexPath.section == 2 && indexPath.row == 1 {
-            
+            commentInAppStore()
         } else if indexPath.section == 2 && indexPath.row == 2 {
             
         } else if indexPath.section == 3 {
@@ -101,6 +101,12 @@ extension SettingsViewController {
             let controller = UIActivityViewController(activityItems: ["分享给朋友", url, UIImage.init(named: "AppIcon")!], applicationActivities: [])
             controller.excludedActivityTypes = [.addToReadingList, .assignToContact, .openInIBooks, .saveToCameraRoll]
             self.present(controller, animated: true, completion: nil)
+        }
+    }
+    
+    private func commentInAppStore() {
+        if let url = URL(string: Configs.appStoreUrl) {
+            UIApplication.shared.open(url, options: [UIApplication.OpenExternalURLOptionsKey: Any](), completionHandler: nil)
         }
     }
 }
