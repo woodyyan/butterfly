@@ -13,6 +13,8 @@ class SettingsViewController: UITableViewController {
     
     private let viewModel: SettingsViewModel = ViewModelFactory.shared.create()
     
+//    private let feedbackKit = BCFeedbackKit(appKey: GlobleConfigs.aliyunAppKey, appSecret: GlobleConfigs.aliyunAppSecret)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -85,9 +87,9 @@ extension SettingsViewController {
         } else if indexPath.section == 2 && indexPath.row == 1 {
             commentInAppStore()
         } else if indexPath.section == 2 && indexPath.row == 2 {
-            
+            feedback()
         } else if indexPath.section == 3 {
-            
+            openAboutController()
         }
     }
     
@@ -108,5 +110,26 @@ extension SettingsViewController {
         if let url = URL(string: Configs.appStoreUrl) {
             UIApplication.shared.open(url, options: [UIApplication.OpenExternalURLOptionsKey: Any](), completionHandler: nil)
         }
+    }
+    
+    private func openAboutController() {
+        let aboutViewController = AboutViewController()
+        self.navigationController?.pushViewController(aboutViewController, animated: true)
+    }
+    
+    private func feedback() {
+//        feedbackKit?.extInfo = [
+//            "app_version": VersionUtils.getCurrentVersion(),
+//            "device_model": UIDevice.current.model
+//        ]
+//        feedbackKit?.makeFeedbackViewController(completionBlock: { (controller, error) in
+//            print(error ?? "")
+//            if let feedbackController = controller {
+//                self.navigationController?.pushViewController(feedbackController, animated: true)
+//                feedbackController.closeBlock = { controller in
+//                    controller?.navigationController?.popViewController(animated: true)
+//                }
+//            }
+//        })
     }
 }
