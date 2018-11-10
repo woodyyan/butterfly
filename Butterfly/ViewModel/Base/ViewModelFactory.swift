@@ -25,6 +25,7 @@ class ViewModelFactory {
 //        let tagStorage = TagStorage(context: context)
         viewModels.append(SettingsViewModel())
         viewModels.append(HomeViewModel())
+        viewModels.append(PictureViewModel())
     }
     
     func create<T>() -> T {

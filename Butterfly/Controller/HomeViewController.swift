@@ -73,7 +73,11 @@ extension HomeViewController {
 }
 
 extension HomeViewController: ImageScrollTableCellDelegate {
-    func imageScrollTableCell(tableCell: ImageScrollTalbeCell, data: Any?) {
-        print(90)
+    
+    func imageScrollTableCell(tableCell: ImageScrollTalbeCell, butterfly: Butterfly, selected: Int) {
+        let pictureViewController = PictureViewController()
+        pictureViewController.viewModel.butterfly = butterfly
+        pictureViewController.viewModel.currentSelected = selected
+        self.navigationController?.pushViewController(pictureViewController, animated: true)
     }
 }

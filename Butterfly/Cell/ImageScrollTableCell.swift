@@ -11,6 +11,7 @@ import UIKit
 import SnapKit
 
 class ImageScrollTalbeCell: UITableViewCell {
+    private var butterfly: Butterfly?
     
     weak var delegate: ImageScrollTableCellDelegate?
     
@@ -25,6 +26,7 @@ class ImageScrollTalbeCell: UITableViewCell {
     }
     
     func initUI(butterfly: Butterfly) {
+        self.butterfly = butterfly
         self.backgroundColor = UIColor.background
         
         let label = UILabel()
@@ -59,6 +61,7 @@ class ImageScrollTalbeCell: UITableViewCell {
         var index = 0
         for pic in butterfly.pictures {
             let imageView = TapImageView(image: UIImage(named: pic))
+            imageView.picture = pic
             imageView.delegate = self
             imageView.frame = CGRect(x: index*(width+margin) + margin, y: margin, width: width, height: height)
             scrollView.addSubview(imageView)
@@ -74,11 +77,12 @@ class ImageScrollTalbeCell: UITableViewCell {
 }
 
 protocol ImageScrollTableCellDelegate: NSObjectProtocol {
-    func imageScrollTableCell(tableCell: ImageScrollTalbeCell, data: Any?)
+    func imageScrollTableCell(tableCell: ImageScrollTalbeCell, butterfly: Butterfly, selected: Int)
 }
 
 extension ImageScrollTalbeCell: TapImageViewDelegate {
-    func tapImageView(imageView: TapImageView, data: Any?) {
-        self.delegate?.imageScrollTableCell(tableCell: self, data: data)
+    func tapImageView(imageView: TapImageView) {
+        let index = self.butterfly!.pictures.firstIndex(of: imageView.picture)
+        self.delegate?.imageScrollTableCell(tableCell: self, butterfly: self.butterfly!, selected: index!)
     }
 }
