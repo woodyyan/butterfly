@@ -28,17 +28,27 @@ class PictureViewController: UIViewController {
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
         
+        let rightItem = UIBarButtonItem(image: #imageLiteral(resourceName: "more"), style: .plain, target: self, action: #selector(PictureViewController.openMenu(_:)))
+        self.navigationItem.rightBarButtonItem = rightItem
+        
         scrollView.frame = self.view.frame
         self.view.addSubview(scrollView)
         scrollView.isPagingEnabled = true
         scrollView.contentSize = CGSize(width: self.width*9, height: 0)
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.showsVerticalScrollIndicator = false
+        scrollView.backgroundColor = UIColor.background
         scrollView.delegate = self
         
+        let screenHeight = UIScreen.main.bounds.height
+        let navController = self.navigationController!
+        let top = navController.view.safeAreaInsets.top
+        let bottom = navController.view.safeAreaInsets.bottom
+        let safeHeight = screenHeight - top - bottom - navController.navigationBar.height
         for i in 0..<viewModel.butterfly.pictures.count {
             let imageView = UIImageView(image: UIImage(named: viewModel.butterfly.pictures[i]))
-            imageView.frame = CGRect(x: self.width*CGFloat(i), y: 0, width: width, height: imageView.frame.height)
+            let height = imageView.height > safeHeight ? safeHeight : imageView.height
+            imageView.frame = CGRect(x: self.width*CGFloat(i), y: 0, width: width, height: height)
             imageView.contentMode = .scaleAspectFit
             scrollView.addSubview(imageView)
         }
@@ -56,6 +66,10 @@ class PictureViewController: UIViewController {
         }
         
         setCurrentPage()
+    }
+    
+    @objc func openMenu(_ sender: UIBarButtonItem) {
+        print(3)
     }
     
     private func setCurrentPage() {
