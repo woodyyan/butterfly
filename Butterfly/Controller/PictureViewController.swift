@@ -69,7 +69,25 @@ class PictureViewController: UIViewController {
     }
     
     @objc func openMenu(_ sender: UIBarButtonItem) {
-        print(3)
+        let alertController = UIAlertController(title: "收藏与保存", message: nil, preferredStyle: UIAlertController.Style.actionSheet)
+        let favAction = UIAlertAction(title: "收藏", style: UIAlertAction.Style.default) { (_) in
+            self.addFav()
+        }
+        let saveAction = UIAlertAction(title: "保存到相册", style: UIAlertAction.Style.default) { (_) in
+            self.saveToAlbum()
+        }
+        alertController.addAction(favAction)
+        alertController.addAction(saveAction)
+        alertController.addAction(UIAlertAction(title: "取消", style: UIAlertAction.Style.cancel, handler: nil))
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    private func addFav() {
+        print(self.pageControl.currentPage)
+    }
+    
+    private func saveToAlbum() {
+        print(self.pageControl.currentPage)
     }
     
     private func setCurrentPage() {
@@ -88,5 +106,6 @@ extension PictureViewController: UIScrollViewDelegate {
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let pageNumber = round(scrollView.contentOffset.x / scrollView.frame.size.width)
         pageControl.currentPage = Int(pageNumber)
+        self.viewModel.currentSelected = Int(pageNumber)
     }
 }
