@@ -22,8 +22,12 @@ class HomeViewController: UITableViewController {
         self.title = "青娥"
         self.tableView.backgroundColor = UIColor.background
         self.navigationController?.navigationBar.barTintColor = UIColor.background
+        self.navigationController?.navigationBar.backgroundColor = UIColor.background
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.themeColor]
         self.navigationController?.navigationBar.tintColor = UIColor.themeColor
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = false
         
         let rightItem = UIBarButtonItem(image: #imageLiteral(resourceName: "more"), style: .plain, target: self, action: #selector(HomeViewController.pushToSettingsPage(_:)))
         self.navigationItem.rightBarButtonItem = rightItem
