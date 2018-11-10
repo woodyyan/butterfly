@@ -81,7 +81,7 @@ extension SettingsViewController {
         } else if indexPath.section == 1 {
             pushToFavController()
         } else if indexPath.section == 2 && indexPath.row == 0 {
-            
+            share()
         } else if indexPath.section == 2 && indexPath.row == 1 {
             
         } else if indexPath.section == 2 && indexPath.row == 2 {
@@ -94,5 +94,13 @@ extension SettingsViewController {
     private func pushToFavController() {
         let favViewController = FavViewController()
         self.navigationController?.pushViewController(favViewController, animated: true)
+    }
+    
+    private func share() {
+        if let url = URL(string: Configs.appStoreUrl) {
+            let controller = UIActivityViewController(activityItems: ["分享给朋友", url, UIImage.init(named: "AppIcon")!], applicationActivities: [])
+            controller.excludedActivityTypes = [.addToReadingList, .assignToContact, .openInIBooks, .saveToCameraRoll]
+            self.present(controller, animated: true, completion: nil)
+        }
     }
 }
