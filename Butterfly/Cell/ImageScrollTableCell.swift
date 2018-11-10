@@ -55,15 +55,13 @@ class ImageScrollTalbeCell: UITableViewCell {
     private func buildScrollView(_ butterfly: Butterfly) -> UIScrollView {
         let scrollView = UIScrollView()
         
-        let width = 100
-        let height = 150
         let margin = 10
         var index = 0
         for pic in butterfly.pictures {
             let imageView = TapImageView(image: UIImage(named: pic))
             imageView.picture = pic
             imageView.delegate = self
-            imageView.frame = CGRect(x: index*(width+margin) + margin, y: margin, width: width, height: height)
+            imageView.frame = CGRect(x: index*(Configs.imageWidth + margin) + margin, y: margin, width: Configs.imageWidth, height: Configs.imageHeight)
             scrollView.addSubview(imageView)
             index += 1
         }

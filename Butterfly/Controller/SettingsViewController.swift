@@ -44,6 +44,8 @@ class SettingsViewController: UITableViewController {
 extension SettingsViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        handleAction(indexPath: indexPath)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -71,5 +73,26 @@ extension SettingsViewController {
             cell.imageView?.image = UIImage(named: name)
         }
         return cell
+    }
+    
+    private func handleAction(indexPath: IndexPath) {
+        if indexPath.section == 0 {
+            
+        } else if indexPath.section == 1 {
+            pushToFavController()
+        } else if indexPath.section == 2 && indexPath.row == 0 {
+            
+        } else if indexPath.section == 2 && indexPath.row == 1 {
+            
+        } else if indexPath.section == 2 && indexPath.row == 2 {
+            
+        } else if indexPath.section == 3 {
+            
+        }
+    }
+    
+    private func pushToFavController() {
+        let favViewController = FavViewController()
+        self.navigationController?.pushViewController(favViewController, animated: true)
     }
 }

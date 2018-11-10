@@ -18,7 +18,7 @@ class TapImageView: UIImageView {
     override init(image: UIImage?) {
         super.init(image: image)
         
-        self.layer.cornerRadius = 6
+        self.layer.cornerRadius = Configs.cornerRadius
         self.layer.masksToBounds = true
         
         let gesture = UITapGestureRecognizer(target: self, action: #selector(TapImageView.tapImage(_:)))
