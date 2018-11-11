@@ -64,6 +64,12 @@ extension SubViewController {
             return 50
         case 7:
             return 50
+        case 8:
+            return 50
+        case 9:
+            return 100
+        case 10:
+            return 60
         default:
             return 44
         }
@@ -85,9 +91,80 @@ extension SubViewController {
             return getMonthMemberButtonCell()
         case 7:
             return getYearMemberButtonCell()
+        case 8:
+            return getSubDescriptionCell()
+        case 9:
+            return getDescriptionDetailCell()
+        case 10:
+            return getTermButtonsCell()
         default:
             return UITableViewCell()
         }
+    }
+    
+    private func getTermButtonsCell() -> UITableViewCell {
+        let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
+        
+        let termsOfUseButton = UIButton(type: UIButton.ButtonType.system)
+        
+        termsOfUseButton.setAttributedTitle("服务条款".toUnderlineString(UIColor.gray), for: UIControl.State.normal)
+        termsOfUseButton.setTitleColor(UIColor.gray, for: UIControl.State.normal)
+        termsOfUseButton.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+        termsOfUseButton.addTarget(self, action: #selector(SubViewController.openTermsPage(_:)), for: UIControl.Event.touchUpInside)
+        
+        let privacyPolicyButton = UIButton(type: UIButton.ButtonType.system)
+        privacyPolicyButton.setAttributedTitle("隐私政策".toUnderlineString(UIColor.gray), for: UIControl.State.normal)
+        privacyPolicyButton.setTitleColor(UIColor.gray, for: UIControl.State.normal)
+        privacyPolicyButton.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+        privacyPolicyButton.addTarget(self, action: #selector(SubViewController.openTermsPage(_:)), for: UIControl.Event.touchUpInside)
+        
+        let stackView = UIStackView(arrangedSubviews: [termsOfUseButton, privacyPolicyButton])
+        stackView.axis = .horizontal
+        stackView.spacing = 100
+        cell.addSubview(stackView)
+        stackView.snp.makeConstraints { (make) in
+            make.centerY.equalToSuperview()
+            make.centerX.equalToSuperview()
+        }
+        return cell
+    }
+    
+    @objc func openTermsPage(_ sender: UIButton) {
+        print(23)
+    }
+    
+    private func getDescriptionDetailCell() -> UITableViewCell {
+        let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
+        let textLabel = UILabel()
+        textLabel.text = """
+        确认购买后，将通过您的iTunes账户付款。
+        
+        自动续期订阅的Apple ID，
+        会在每个账单周期到期前24小时，
+        自动在iTunes账户扣费并延长6个月有效期。
+        
+        在订阅期间，您可以通过个人iTunes账户取消订阅。
+        并需在现有计划到期之际，至少提前24小时进行取消操作。
+        """
+        textLabel.numberOfLines = 8
+        textLabel.textColor = UIColor.gray
+        textLabel.font = UIFont.systemFont(ofSize: 10)
+        cell.addSubview(textLabel)
+        textLabel.snp.makeConstraints { (make) in
+            make.left.equalToSuperview().offset(70)
+            make.centerY.equalToSuperview()
+        }
+        return cell
+    }
+    
+    private func getSubDescriptionCell() -> UITableViewCell {
+        let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
+        cell.textLabel?.text = "订阅须知"
+        cell.textLabel?.textAlignment = .center
+        cell.textLabel?.font = UIFont.systemFont(ofSize: 14)
+        cell.textLabel?.textColor = UIColor.darkGray
+        cell.contentMode = .center
+        return cell
     }
     
     private func getYearMemberButtonCell() -> UITableViewCell {
@@ -122,6 +199,7 @@ extension SubViewController {
         button.backgroundColor = UIColor.background
         button.layer.cornerRadius = 18
         button.layer.masksToBounds = true
+        button.addTarget(self, action: #selector(SubViewController.subscribeByYear(_:)), for: UIControl.Event.touchUpInside)
         
         cell.addSubview(button)
         button.snp.makeConstraints { (make) in
@@ -131,6 +209,14 @@ extension SubViewController {
             make.centerY.equalToSuperview()
         }
         return cell
+    }
+    
+    @objc func subscribeByMonth(_ sender: UIButton) {
+        print(35)
+    }
+    
+    @objc func subscribeByYear(_ sender: UIButton) {
+        print(34)
     }
     
     private func getMonthMemberButtonCell() -> UITableViewCell {
@@ -159,6 +245,7 @@ extension SubViewController {
         button.layer.borderWidth = 1
         button.layer.cornerRadius = 18
         button.layer.masksToBounds = true
+        button.addTarget(self, action: #selector(SubViewController.subscribeByMonth(_:)), for: UIControl.Event.touchUpInside)
         
         cell.addSubview(button)
         button.snp.makeConstraints { (make) in
