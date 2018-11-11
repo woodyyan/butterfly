@@ -24,7 +24,7 @@ class AboutViewController: UIViewController {
     }
     
     private func initUI() {
-        let iconImage = UIImageView(image: #imageLiteral(resourceName: "butterfly"))
+        let iconImage = UIImageView(image: #imageLiteral(resourceName: "butterflyBig"))
         self.view.addSubview(iconImage)
         iconImage.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()

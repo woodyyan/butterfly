@@ -79,7 +79,7 @@ extension SettingsViewController {
     
     private func handleAction(indexPath: IndexPath) {
         if indexPath.section == 0 {
-            
+            pushToSubController()
         } else if indexPath.section == 1 {
             pushToFavController()
         } else if indexPath.section == 2 && indexPath.row == 0 {
@@ -115,6 +115,11 @@ extension SettingsViewController {
     private func openAboutController() {
         let aboutViewController = AboutViewController()
         self.navigationController?.pushViewController(aboutViewController, animated: true)
+    }
+    
+    private func pushToSubController() {
+        let subViewController = SubViewController()
+        self.present(subViewController, animated: true, completion: nil)
     }
     
     private func feedback() {
