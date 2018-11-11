@@ -66,7 +66,8 @@ class ImageScrollTalbeCell: UITableViewCell {
             index += 1
         }
         
-        scrollView.contentSize = CGSize(width: 70*9, height: scrollView.frame.height)
+        let contentWidth: CGFloat = CGFloat((Configs.imageWidth + margin) * butterfly.pictures.count)
+        scrollView.contentSize = CGSize(width: contentWidth, height: scrollView.frame.height)
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.showsVerticalScrollIndicator = false
         

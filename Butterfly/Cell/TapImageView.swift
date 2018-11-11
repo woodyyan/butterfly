@@ -24,6 +24,8 @@ class TapImageView: UIImageView {
         let gesture = UITapGestureRecognizer(target: self, action: #selector(TapImageView.tapImage(_:)))
         self.addGestureRecognizer(gesture)
         self.isUserInteractionEnabled = true
+        
+        self.contentMode = .scaleAspectFill
     }
     
     required init?(coder aDecoder: NSCoder) {
