@@ -75,6 +75,7 @@ extension SubViewController {
         }
     }
     
+    // swiftlint:disable cyclomatic_complexity
     private func getCell(by indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row {
         case 0:
