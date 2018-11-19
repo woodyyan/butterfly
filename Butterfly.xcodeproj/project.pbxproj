@@ -42,6 +42,12 @@
 		22ABC32C219D1D94006062BC /* ButterflyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ABC32B219D1D94006062BC /* ButterflyAPI.swift */; };
 		22ABC32E219D9231006062BC /* Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ABC32D219D9231006062BC /* Meta.swift */; };
 		22ABC33021A25272006062BC /* StringDateTransfrom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ABC32F21A25272006062BC /* StringDateTransfrom.swift */; };
+		22ABC33221A262A3006062BC /* ButterflyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ABC33121A262A3006062BC /* ButterflyService.swift */; };
+		22ABC33521A263A6006062BC /* CoreStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ABC33421A263A6006062BC /* CoreStorage.swift */; };
+		22ABC33721A28067006062BC /* ButterflyStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ABC33621A28067006062BC /* ButterflyStorage.swift */; };
+		22ABC33E21A28E9B006062BC /* NSManagedObjectContextExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ABC33D21A28E9B006062BC /* NSManagedObjectContextExtension.swift */; };
+		22ABC34021A29C12006062BC /* ButterflySection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ABC33F21A29C12006062BC /* ButterflySection.swift */; };
+		22ABC34221A2A070006062BC /* NSManagedObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ABC34121A2A070006062BC /* NSManagedObjectExtension.swift */; };
 		3D00ECC244A9F7BAD1CC0C15 /* Pods_Butterfly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD0185198D225CA3F957A31E /* Pods_Butterfly.framework */; };
 /* End PBXBuildFile section */
 
@@ -104,6 +110,12 @@
 		22ABC32B219D1D94006062BC /* ButterflyAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButterflyAPI.swift; sourceTree = "<group>"; };
 		22ABC32D219D9231006062BC /* Meta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meta.swift; sourceTree = "<group>"; };
 		22ABC32F21A25272006062BC /* StringDateTransfrom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringDateTransfrom.swift; sourceTree = "<group>"; };
+		22ABC33121A262A3006062BC /* ButterflyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButterflyService.swift; sourceTree = "<group>"; };
+		22ABC33421A263A6006062BC /* CoreStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreStorage.swift; sourceTree = "<group>"; };
+		22ABC33621A28067006062BC /* ButterflyStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButterflyStorage.swift; sourceTree = "<group>"; };
+		22ABC33D21A28E9B006062BC /* NSManagedObjectContextExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSManagedObjectContextExtension.swift; sourceTree = "<group>"; };
+		22ABC33F21A29C12006062BC /* ButterflySection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButterflySection.swift; sourceTree = "<group>"; };
+		22ABC34121A2A070006062BC /* NSManagedObjectExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSManagedObjectExtension.swift; sourceTree = "<group>"; };
 		75C54B338CE37D457FEF820D /* Pods-Butterfly.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Butterfly.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Butterfly/Pods-Butterfly.debug.xcconfig"; sourceTree = "<group>"; };
 		C5C962A36C2F78285E364CB5 /* Pods-Butterfly.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Butterfly.release.xcconfig"; path = "Pods/Target Support Files/Pods-Butterfly/Pods-Butterfly.release.xcconfig"; sourceTree = "<group>"; };
 		CD0185198D225CA3F957A31E /* Pods_Butterfly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Butterfly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -162,6 +174,8 @@
 		2220030E218EC6A900481176 /* Butterfly */ = {
 			isa = PBXGroup;
 			children = (
+				22ABC33821A288D1006062BC /* Entity */,
+				22ABC33321A2639E006062BC /* Storage */,
 				22ABC32A219D1D41006062BC /* Network */,
 				22ABC3212196DFBC006062BC /* Utils */,
 				22ABC30A219439DD006062BC /* Model */,
@@ -217,6 +231,8 @@
 				22ABC2F92191398A006062BC /* UIColorExtension.swift */,
 				22ABC31B2196B907006062BC /* UIViewExtension.swift */,
 				22ABC328219878DD006062BC /* StringExtension.swift */,
+				22ABC33D21A28E9B006062BC /* NSManagedObjectContextExtension.swift */,
+				22ABC34121A2A070006062BC /* NSManagedObjectExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -259,6 +275,7 @@
 				22ABC313219553CB006062BC /* ButterflyData.swift */,
 				22ABC31521955423006062BC /* Butterfly.swift */,
 				22ABC32D219D9231006062BC /* Meta.swift */,
+				22ABC33F21A29C12006062BC /* ButterflySection.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -276,8 +293,25 @@
 			children = (
 				22ABC32B219D1D94006062BC /* ButterflyAPI.swift */,
 				22ABC32F21A25272006062BC /* StringDateTransfrom.swift */,
+				22ABC33121A262A3006062BC /* ButterflyService.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		22ABC33321A2639E006062BC /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				22ABC33421A263A6006062BC /* CoreStorage.swift */,
+				22ABC33621A28067006062BC /* ButterflyStorage.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		22ABC33821A288D1006062BC /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 		6F39E32AB6AC8E08A0511869 /* Pods */ = {
@@ -494,12 +528,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				22200312218EC6A900481176 /* ViewController.swift in Sources */,
+				22ABC34021A29C12006062BC /* ButterflySection.swift in Sources */,
 				22ABC307219438C4006062BC /* BaseViewModel.swift in Sources */,
 				22ABC2FD219164CF006062BC /* ImageScrollTableCell.swift in Sources */,
 				22ABC3272196ECB9006062BC /* SubViewController.swift in Sources */,
 				22ABC314219553CB006062BC /* ButterflyData.swift in Sources */,
 				22ABC33021A25272006062BC /* StringDateTransfrom.swift in Sources */,
 				22200310218EC6A900481176 /* AppDelegate.swift in Sources */,
+				22ABC33E21A28E9B006062BC /* NSManagedObjectContextExtension.swift in Sources */,
 				22ABC32C219D1D94006062BC /* ButterflyAPI.swift in Sources */,
 				22ABC3012192E46B006062BC /* SettingsViewController.swift in Sources */,
 				22ABC32E219D9231006062BC /* Meta.swift in Sources */,
@@ -513,9 +549,13 @@
 				22ABC30E21943A52006062BC /* Section.swift in Sources */,
 				22ABC2FA2191398A006062BC /* UIColorExtension.swift in Sources */,
 				22ABC305219438A7006062BC /* ViewModelFactory.swift in Sources */,
+				22ABC33521A263A6006062BC /* CoreStorage.swift in Sources */,
 				22ABC3092194394C006062BC /* SettingsViewModel.swift in Sources */,
 				22200318218EC6A900481176 /* Butterfly.xcdatamodeld in Sources */,
+				22ABC34221A2A070006062BC /* NSManagedObjectExtension.swift in Sources */,
 				22ABC31221953339006062BC /* HomeViewModel.swift in Sources */,
+				22ABC33221A262A3006062BC /* ButterflyService.swift in Sources */,
+				22ABC33721A28067006062BC /* ButterflyStorage.swift in Sources */,
 				22ABC31621955423006062BC /* Butterfly.swift in Sources */,
 				22ABC31A2195C938006062BC /* PictureViewModel.swift in Sources */,
 				22ABC2F52191376B006062BC /* HomeViewController.swift in Sources */,

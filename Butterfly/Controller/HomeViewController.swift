@@ -48,7 +48,7 @@ extension HomeViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         if let imageCell = cell as? ImageScrollTalbeCell {
-            imageCell.initUI(butterfly: viewModel.butterflySets[indexPath.section].butterflies[indexPath.row])
+            imageCell.initUI(butterfly: viewModel.butterflySections[indexPath.section].butterflies[indexPath.row])
             imageCell.delegate = self
         }
         return cell
@@ -56,7 +56,7 @@ extension HomeViewController {
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let titleLabel = UILabel()
-        titleLabel.text = viewModel.butterflySets[section].date
+        titleLabel.text = viewModel.butterflySections[section].title
         titleLabel.font = UIFont.systemFont(ofSize: 12)
         titleLabel.textAlignment = .center
         titleLabel.textColor = UIColor.darkRed
@@ -68,11 +68,11 @@ extension HomeViewController {
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return viewModel.butterflySets.count
+        return viewModel.butterflySections.count
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.butterflySets[section].count
+        return viewModel.butterflySections[section].count
     }
 }
 

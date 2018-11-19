@@ -21,13 +21,3 @@ struct ButterflyData: Mappable {
         butterflies <- map["data"]
     }
 }
-
-extension ButterflyData {
-    var count: Int {
-        return butterflies.count
-    }
-    
-    var date: String {
-        return ""
-    }
-}

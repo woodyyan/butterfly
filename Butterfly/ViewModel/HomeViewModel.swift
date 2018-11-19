@@ -11,22 +11,24 @@ import Moya
 import ObjectMapper
 
 class HomeViewModel: BaseViewModel {
-    var butterflySets = [ButterflyData]()
+    private var storage: ButterflyStorage!
+    private var service: ButterflyService!
     
-    override init() {
-        // 这里应该是从本地数据库取数据
-        // 从服务器获取数据应该是刷新的时候做
-        let provider = MoyaProvider<ButterflyAPI>()
-        provider.request(ButterflyAPI.searchButterfly(page: 0, size: 20)) { (result) in
-            switch result {
-            case let .success(response):
-                let data = response.data
-                let butterflyData = ButterflyData(JSONString: String(data: data, encoding: String.Encoding.utf8)!)
-                print(butterflyData)
-            case let .failure(error):
-                print(error)
+    var butterflySections = [ButterflySection]()
+    
+    init(storage: ButterflyStorage, service: ButterflyService) {
+        super.init()
+        
+        self.storage = storage
+        self.service = service
+        
+        service.fetchNewButterflies { (success) in
+            if success {
+                let butterflies = storage.fetch()
+                print(butterflies)
             }
         }
+    }
         
 //        for _ in 0...1 {
 //            var dailySet = ButterflyData(date: "today")
@@ -46,5 +48,4 @@ class HomeViewModel: BaseViewModel {
 //            }
 //            butterflySets.append(dailySet)
 //        }
-    }
 }

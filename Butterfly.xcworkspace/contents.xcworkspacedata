@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Butterfly/Entity/ButterflyEntity+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:Butterfly/Entity/ButterflyEntity+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
       location = "group:Butterfly.xcodeproj">
    </FileRef>
    <FileRef

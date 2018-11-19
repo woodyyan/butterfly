@@ -21,10 +21,11 @@ class ViewModelFactory {
     private var viewModels = [BaseViewModel]()
     
     private init() {
-//        let context = CoreStorage.shared.persistentContainer.viewContext
-//        let tagStorage = TagStorage(context: context)
+        let context = CoreStorage.shared.persistentContainer.viewContext
+        let butterflyStorage = ButterflyStorage(context: context)
+        let service = ButterflyService()
+        viewModels.append(HomeViewModel(storage: butterflyStorage, service: service))
         viewModels.append(SettingsViewModel())
-        viewModels.append(HomeViewModel())
         viewModels.append(PictureViewModel())
     }
     

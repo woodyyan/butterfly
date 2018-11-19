@@ -10,6 +10,7 @@ import Foundation
 import ObjectMapper
 
 struct Butterfly: Mappable {
+    var id: Int = 0
     var name: String = ""
     var butterflyId: Int = 0
     var setId: Int = 0
@@ -17,10 +18,16 @@ struct Butterfly: Mappable {
     var createdDate: Date!
     var updatedDate: Date!
     
+    init() {
+        
+    }
+    
     init?(map: Map) {
+        
     }
     
     mutating func mapping(map: Map) {
+        id <- map["id"]
         name <- map["name"]
         butterflyId <- map["butterflyId"]
         setId <- map["setId"]
