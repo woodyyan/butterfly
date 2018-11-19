@@ -18,4 +18,10 @@ extension String {
         string.addAttribute(NSAttributedString.Key.foregroundColor, value: color, range: range)
         return string
     }
+    
+    func toDate() -> Date {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        return formatter.date(from: self)!
+    }
 }

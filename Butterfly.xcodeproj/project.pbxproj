@@ -29,7 +29,7 @@
 		22ABC30E21943A52006062BC /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ABC30D21943A52006062BC /* Section.swift */; };
 		22ABC31021943AC3006062BC /* SettingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ABC30F21943AC3006062BC /* SettingItem.swift */; };
 		22ABC31221953339006062BC /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ABC31121953339006062BC /* HomeViewModel.swift */; };
-		22ABC314219553CB006062BC /* ButterflyDailySet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ABC313219553CB006062BC /* ButterflyDailySet.swift */; };
+		22ABC314219553CB006062BC /* ButterflyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ABC313219553CB006062BC /* ButterflyData.swift */; };
 		22ABC31621955423006062BC /* Butterfly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ABC31521955423006062BC /* Butterfly.swift */; };
 		22ABC3182195C491006062BC /* PictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ABC3172195C491006062BC /* PictureViewController.swift */; };
 		22ABC31A2195C938006062BC /* PictureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ABC3192195C938006062BC /* PictureViewModel.swift */; };
@@ -39,6 +39,9 @@
 		22ABC3252196E624006062BC /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ABC3242196E624006062BC /* AboutViewController.swift */; };
 		22ABC3272196ECB9006062BC /* SubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ABC3262196ECB9006062BC /* SubViewController.swift */; };
 		22ABC329219878DD006062BC /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ABC328219878DD006062BC /* StringExtension.swift */; };
+		22ABC32C219D1D94006062BC /* ButterflyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ABC32B219D1D94006062BC /* ButterflyAPI.swift */; };
+		22ABC32E219D9231006062BC /* Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ABC32D219D9231006062BC /* Meta.swift */; };
+		22ABC33021A25272006062BC /* StringDateTransfrom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ABC32F21A25272006062BC /* StringDateTransfrom.swift */; };
 		3D00ECC244A9F7BAD1CC0C15 /* Pods_Butterfly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD0185198D225CA3F957A31E /* Pods_Butterfly.framework */; };
 /* End PBXBuildFile section */
 
@@ -88,7 +91,7 @@
 		22ABC30D21943A52006062BC /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		22ABC30F21943AC3006062BC /* SettingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingItem.swift; sourceTree = "<group>"; };
 		22ABC31121953339006062BC /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		22ABC313219553CB006062BC /* ButterflyDailySet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButterflyDailySet.swift; sourceTree = "<group>"; };
+		22ABC313219553CB006062BC /* ButterflyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButterflyData.swift; sourceTree = "<group>"; };
 		22ABC31521955423006062BC /* Butterfly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Butterfly.swift; sourceTree = "<group>"; };
 		22ABC3172195C491006062BC /* PictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureViewController.swift; sourceTree = "<group>"; };
 		22ABC3192195C938006062BC /* PictureViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureViewModel.swift; sourceTree = "<group>"; };
@@ -98,6 +101,9 @@
 		22ABC3242196E624006062BC /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		22ABC3262196ECB9006062BC /* SubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubViewController.swift; sourceTree = "<group>"; };
 		22ABC328219878DD006062BC /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		22ABC32B219D1D94006062BC /* ButterflyAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButterflyAPI.swift; sourceTree = "<group>"; };
+		22ABC32D219D9231006062BC /* Meta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meta.swift; sourceTree = "<group>"; };
+		22ABC32F21A25272006062BC /* StringDateTransfrom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringDateTransfrom.swift; sourceTree = "<group>"; };
 		75C54B338CE37D457FEF820D /* Pods-Butterfly.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Butterfly.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Butterfly/Pods-Butterfly.debug.xcconfig"; sourceTree = "<group>"; };
 		C5C962A36C2F78285E364CB5 /* Pods-Butterfly.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Butterfly.release.xcconfig"; path = "Pods/Target Support Files/Pods-Butterfly/Pods-Butterfly.release.xcconfig"; sourceTree = "<group>"; };
 		CD0185198D225CA3F957A31E /* Pods_Butterfly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Butterfly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -156,6 +162,7 @@
 		2220030E218EC6A900481176 /* Butterfly */ = {
 			isa = PBXGroup;
 			children = (
+				22ABC32A219D1D41006062BC /* Network */,
 				22ABC3212196DFBC006062BC /* Utils */,
 				22ABC30A219439DD006062BC /* Model */,
 				22ABC30221943885006062BC /* ViewModel */,
@@ -249,8 +256,9 @@
 				22ABC30B219439E6006062BC /* Settings.swift */,
 				22ABC30D21943A52006062BC /* Section.swift */,
 				22ABC30F21943AC3006062BC /* SettingItem.swift */,
-				22ABC313219553CB006062BC /* ButterflyDailySet.swift */,
+				22ABC313219553CB006062BC /* ButterflyData.swift */,
 				22ABC31521955423006062BC /* Butterfly.swift */,
+				22ABC32D219D9231006062BC /* Meta.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -261,6 +269,15 @@
 				22ABC3222196DFCC006062BC /* Configs.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		22ABC32A219D1D41006062BC /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				22ABC32B219D1D94006062BC /* ButterflyAPI.swift */,
+				22ABC32F21A25272006062BC /* StringDateTransfrom.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		6F39E32AB6AC8E08A0511869 /* Pods */ = {
@@ -450,10 +467,18 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Butterfly/Pods-Butterfly-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -472,9 +497,12 @@
 				22ABC307219438C4006062BC /* BaseViewModel.swift in Sources */,
 				22ABC2FD219164CF006062BC /* ImageScrollTableCell.swift in Sources */,
 				22ABC3272196ECB9006062BC /* SubViewController.swift in Sources */,
-				22ABC314219553CB006062BC /* ButterflyDailySet.swift in Sources */,
+				22ABC314219553CB006062BC /* ButterflyData.swift in Sources */,
+				22ABC33021A25272006062BC /* StringDateTransfrom.swift in Sources */,
 				22200310218EC6A900481176 /* AppDelegate.swift in Sources */,
+				22ABC32C219D1D94006062BC /* ButterflyAPI.swift in Sources */,
 				22ABC3012192E46B006062BC /* SettingsViewController.swift in Sources */,
+				22ABC32E219D9231006062BC /* Meta.swift in Sources */,
 				22ABC329219878DD006062BC /* StringExtension.swift in Sources */,
 				22ABC2FF2192D8CB006062BC /* TapImageView.swift in Sources */,
 				22ABC3182195C491006062BC /* PictureViewController.swift in Sources */,

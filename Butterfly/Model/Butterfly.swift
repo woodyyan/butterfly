@@ -7,12 +7,25 @@
 //
 
 import Foundation
+import ObjectMapper
 
-struct Butterfly {
-    var name = ""
+struct Butterfly: Mappable {
+    var name: String = ""
+    var butterflyId: Int = 0
+    var setId: Int = 0
     var pictures = [String]()
+    var createdDate: Date!
+    var updatedDate: Date!
     
-    init(name: String) {
-        self.name = name
+    init?(map: Map) {
+    }
+    
+    mutating func mapping(map: Map) {
+        name <- map["name"]
+        butterflyId <- map["butterflyId"]
+        setId <- map["setId"]
+        pictures <- map["urls"]
+        createdDate <- (map["createdTime"], StringDateTransform())
+        updatedDate <- (map["updatedTime"], StringDateTransform())
     }
 }
