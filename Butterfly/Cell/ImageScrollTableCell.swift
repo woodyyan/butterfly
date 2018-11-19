@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import SnapKit
+import Kingfisher
 
 class ImageScrollTalbeCell: UITableViewCell {
     private var butterfly: Butterfly?
@@ -58,7 +59,8 @@ class ImageScrollTalbeCell: UITableViewCell {
         let margin = 10
         var index = 0
         for pic in butterfly.pictures {
-            let imageView = TapImageView(image: UIImage(named: pic))
+            let imageView = TapImageView(image: #imageLiteral(resourceName: "butterflyNoImage"))
+            imageView.kf.setImage(with: URL(string: pic)!, placeholder: #imageLiteral(resourceName: "butterflyNoImage"))
             imageView.picture = pic
             imageView.delegate = self
             imageView.frame = CGRect(x: index*(Configs.imageWidth + margin) + margin, y: margin, width: Configs.imageWidth, height: Configs.imageHeight)
