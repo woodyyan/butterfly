@@ -18,8 +18,8 @@ class ButterflyService {
             case let .success(response):
                 let data = response.data
                 if let butterflyData = ButterflyData(JSONString: String(data: data, encoding: String.Encoding.utf8)!) {
-                    self.saveToLocal(data: butterflyData)
-                    complete(true)
+                    let success = self.saveToLocal(data: butterflyData)
+                    complete(success)
                 }
             case let .failure(error):
                 print(error)
@@ -28,11 +28,13 @@ class ButterflyService {
         }
     }
     
-    private func saveToLocal(data: ButterflyData) {
+    private func saveToLocal(data: ButterflyData) -> Bool {
         let context = CoreStorage.shared.persistentContainer.viewContext
         let storage = ButterflyStorage(context: context)
+        var success = false
         for butterfly in data.butterflies {
-            storage.save(butterfly: butterfly)
+            success = storage.save(butterfly: butterfly)
         }
+        return success
     }
 }

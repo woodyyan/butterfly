@@ -9,6 +9,7 @@
 import Foundation
 
 struct ButterflySection {
+    
     var title: String
     var butterflies: [Butterfly]
 }

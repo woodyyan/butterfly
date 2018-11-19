@@ -22,10 +22,23 @@ class HomeViewModel: BaseViewModel {
         self.storage = storage
         self.service = service
         
+        fetchFromServer()
+        fetchFromLocal()
+    }
+    
+    private func fetchFromLocal() {
+        let butterflies = storage.fetch(page: 0)
+        let dic = Dictionary(grouping: butterflies, by: { $0.createdDate.toTitleString() })
+        self.butterflySections = dic.map { (arg) -> ButterflySection in
+            let (key, value) = arg
+            return ButterflySection(title: key, butterflies: value)
+        }
+    }
+    
+    private func fetchFromServer() {
         service.fetchNewButterflies { (success) in
             if success {
-                let butterflies = storage.fetch()
-                print(butterflies)
+                self.fetchFromLocal()
             }
         }
     }

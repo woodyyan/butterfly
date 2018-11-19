@@ -48,6 +48,7 @@
 		22ABC33E21A28E9B006062BC /* NSManagedObjectContextExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ABC33D21A28E9B006062BC /* NSManagedObjectContextExtension.swift */; };
 		22ABC34021A29C12006062BC /* ButterflySection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ABC33F21A29C12006062BC /* ButterflySection.swift */; };
 		22ABC34221A2A070006062BC /* NSManagedObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ABC34121A2A070006062BC /* NSManagedObjectExtension.swift */; };
+		22ABC34421A2BF95006062BC /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ABC34321A2BF95006062BC /* DateExtension.swift */; };
 		3D00ECC244A9F7BAD1CC0C15 /* Pods_Butterfly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD0185198D225CA3F957A31E /* Pods_Butterfly.framework */; };
 /* End PBXBuildFile section */
 
@@ -116,6 +117,7 @@
 		22ABC33D21A28E9B006062BC /* NSManagedObjectContextExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSManagedObjectContextExtension.swift; sourceTree = "<group>"; };
 		22ABC33F21A29C12006062BC /* ButterflySection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButterflySection.swift; sourceTree = "<group>"; };
 		22ABC34121A2A070006062BC /* NSManagedObjectExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSManagedObjectExtension.swift; sourceTree = "<group>"; };
+		22ABC34321A2BF95006062BC /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		75C54B338CE37D457FEF820D /* Pods-Butterfly.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Butterfly.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Butterfly/Pods-Butterfly.debug.xcconfig"; sourceTree = "<group>"; };
 		C5C962A36C2F78285E364CB5 /* Pods-Butterfly.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Butterfly.release.xcconfig"; path = "Pods/Target Support Files/Pods-Butterfly/Pods-Butterfly.release.xcconfig"; sourceTree = "<group>"; };
 		CD0185198D225CA3F957A31E /* Pods_Butterfly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Butterfly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -233,6 +235,7 @@
 				22ABC328219878DD006062BC /* StringExtension.swift */,
 				22ABC33D21A28E9B006062BC /* NSManagedObjectContextExtension.swift */,
 				22ABC34121A2A070006062BC /* NSManagedObjectExtension.swift */,
+				22ABC34321A2BF95006062BC /* DateExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -528,6 +531,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				22200312218EC6A900481176 /* ViewController.swift in Sources */,
+				22ABC34421A2BF95006062BC /* DateExtension.swift in Sources */,
 				22ABC34021A29C12006062BC /* ButterflySection.swift in Sources */,
 				22ABC307219438C4006062BC /* BaseViewModel.swift in Sources */,
 				22ABC2FD219164CF006062BC /* ImageScrollTableCell.swift in Sources */,
