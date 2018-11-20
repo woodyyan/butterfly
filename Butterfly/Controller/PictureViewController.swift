@@ -41,9 +41,8 @@ class PictureViewController: UIViewController {
         scrollView.backgroundColor = UIColor.background
         scrollView.delegate = self
         
-        let isSubscribed = SubscriptionManager.shared.isSubscribed()
         for i in 0..<viewModel.butterfly.pictures.count {
-            if isSubscribed || i < viewModel.freePicCount {
+            if canAccess(i) {
                 scrollView.addSubview(getNormalImage(viewModel.butterfly.pictures[i], i))
             } else {
                 scrollView.addSubview(getSubImageView(viewModel.butterfly.pictures[i], i))
@@ -107,9 +106,11 @@ class PictureViewController: UIViewController {
         let favAction = UIAlertAction(title: "收藏", style: UIAlertAction.Style.default) { (_) in
             self.addFav()
         }
+        favAction.isEnabled = canAccess(self.pageControl.currentPage)
         let saveAction = UIAlertAction(title: "保存到相册", style: UIAlertAction.Style.default) { (_) in
             self.saveToAlbum()
         }
+        saveAction.isEnabled = canAccess(self.pageControl.currentPage)
         alertController.addAction(favAction)
         alertController.addAction(saveAction)
         alertController.addAction(UIAlertAction(title: "取消", style: UIAlertAction.Style.cancel, handler: nil))
@@ -146,6 +147,11 @@ class PictureViewController: UIViewController {
         UIView.animate(withDuration: 0.3) {
             self.scrollView.contentOffset = CGPoint(x: CGFloat(pageControl.currentPage)*self.scrollView.width, y: self.scrollView.contentOffset.y)
         }
+    }
+    
+    private func canAccess(_ index: Int) -> Bool {
+        let isSubscribed = SubscriptionManager.shared.isSubscribed()
+        return isSubscribed || index < viewModel.freePicCount
     }
 }
 
