@@ -41,18 +41,13 @@ class PictureViewController: UIViewController {
         scrollView.backgroundColor = UIColor.background
         scrollView.delegate = self
         
-        let screenHeight = UIScreen.main.bounds.height
-        let navController = self.navigationController!
-        let top = navController.view.safeAreaInsets.top
-        let bottom = navController.view.safeAreaInsets.bottom
-        let safeHeight = screenHeight - top - bottom - navController.navigationBar.height
+        let isSubscribed = SubscriptionManager.shared.isSubscribed()
         for i in 0..<viewModel.butterfly.pictures.count {
-            let image = ImageCache.default.retrieveImageInDiskCache(forKey: viewModel.butterfly.pictures[i])
-            let imageView = UIImageView(image: image)
-            let height = imageView.height > safeHeight ? safeHeight : imageView.height
-            imageView.frame = CGRect(x: self.width*CGFloat(i), y: 0, width: width, height: height)
-            imageView.contentMode = .scaleAspectFit
-            scrollView.addSubview(imageView)
+            if isSubscribed || i < viewModel.freePicCount {
+                scrollView.addSubview(getNormalImage(viewModel.butterfly.pictures[i], i))
+            } else {
+                scrollView.addSubview(getSubImageView(viewModel.butterfly.pictures[i], i))
+            }
         }
         
         pageControl.numberOfPages = viewModel.butterfly.pictures.count
@@ -70,6 +65,43 @@ class PictureViewController: UIViewController {
         setCurrentPage()
     }
     
+    private func getSubImageView(_ key: String, _ index: Int) -> UIView {
+        let baseView = UIView(frame: self.view.frame)
+        
+        let screenHeight = UIScreen.main.bounds.height
+        let navController = self.navigationController!
+        let top = navController.view.safeAreaInsets.top
+        let bottom = navController.view.safeAreaInsets.bottom
+        let safeHeight = screenHeight - top - bottom - navController.navigationBar.height
+        let image = ImageCache.default.retrieveImageInDiskCache(forKey: key)
+        let imageView = UIImageView(image: image)
+        let height = imageView.height > safeHeight ? safeHeight : imageView.height
+        imageView.frame = CGRect(x: self.width*CGFloat(index), y: 0, width: width, height: height)
+        imageView.contentMode = .scaleAspectFit
+        baseView.addSubview(imageView)
+        
+        let blurEffect = UIBlurEffect(style: .light)
+        let blurView = UIVisualEffectView(effect: blurEffect)
+        blurView.frame = self.view.bounds
+        imageView.addSubview(blurView)
+        
+        return baseView
+    }
+    
+    private func getNormalImage(_ key: String, _ index: Int) -> ImageView {
+        let screenHeight = UIScreen.main.bounds.height
+        let navController = self.navigationController!
+        let top = navController.view.safeAreaInsets.top
+        let bottom = navController.view.safeAreaInsets.bottom
+        let safeHeight = screenHeight - top - bottom - navController.navigationBar.height
+        let image = ImageCache.default.retrieveImageInDiskCache(forKey: key)
+        let imageView = UIImageView(image: image)
+        let height = imageView.height > safeHeight ? safeHeight : imageView.height
+        imageView.frame = CGRect(x: self.width*CGFloat(index), y: 0, width: width, height: height)
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }
+    
     @objc func openMenu(_ sender: UIBarButtonItem) {
         let alertController = UIAlertController(title: "收藏与保存", message: nil, preferredStyle: UIAlertController.Style.actionSheet)
         let favAction = UIAlertAction(title: "收藏", style: UIAlertAction.Style.default) { (_) in
@@ -85,6 +117,7 @@ class PictureViewController: UIViewController {
     }
     
     private func addFav() {
+        //TODO: fav
         print(self.pageControl.currentPage)
     }
     

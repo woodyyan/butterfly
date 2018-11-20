@@ -9,6 +9,7 @@
 import Foundation
 
 class PictureViewModel: BaseViewModel {
+    let freePicCount = 3
     var butterfly: Butterfly!
     var currentSelected = 0
 }

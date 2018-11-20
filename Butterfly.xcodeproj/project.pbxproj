@@ -50,6 +50,7 @@
 		22ABC34221A2A070006062BC /* NSManagedObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ABC34121A2A070006062BC /* NSManagedObjectExtension.swift */; };
 		22ABC34421A2BF95006062BC /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ABC34321A2BF95006062BC /* DateExtension.swift */; };
 		22ABC34721A3B9FF006062BC /* MessageBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ABC34621A3B9FF006062BC /* MessageBox.swift */; };
+		22ABC34A21A3BCD4006062BC /* SubscriptionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ABC34921A3BCD4006062BC /* SubscriptionManager.swift */; };
 		3D00ECC244A9F7BAD1CC0C15 /* Pods_Butterfly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD0185198D225CA3F957A31E /* Pods_Butterfly.framework */; };
 /* End PBXBuildFile section */
 
@@ -120,6 +121,7 @@
 		22ABC34121A2A070006062BC /* NSManagedObjectExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSManagedObjectExtension.swift; sourceTree = "<group>"; };
 		22ABC34321A2BF95006062BC /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		22ABC34621A3B9FF006062BC /* MessageBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBox.swift; sourceTree = "<group>"; };
+		22ABC34921A3BCD4006062BC /* SubscriptionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionManager.swift; sourceTree = "<group>"; };
 		75C54B338CE37D457FEF820D /* Pods-Butterfly.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Butterfly.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Butterfly/Pods-Butterfly.debug.xcconfig"; sourceTree = "<group>"; };
 		C5C962A36C2F78285E364CB5 /* Pods-Butterfly.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Butterfly.release.xcconfig"; path = "Pods/Target Support Files/Pods-Butterfly/Pods-Butterfly.release.xcconfig"; sourceTree = "<group>"; };
 		CD0185198D225CA3F957A31E /* Pods_Butterfly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Butterfly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -178,6 +180,7 @@
 		2220030E218EC6A900481176 /* Butterfly */ = {
 			isa = PBXGroup;
 			children = (
+				22ABC34821A3BCAC006062BC /* Subscription */,
 				22ABC34521A3B9F4006062BC /* View */,
 				22ABC33821A288D1006062BC /* Entity */,
 				22ABC33321A2639E006062BC /* Storage */,
@@ -326,6 +329,14 @@
 				22ABC34621A3B9FF006062BC /* MessageBox.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		22ABC34821A3BCAC006062BC /* Subscription */ = {
+			isa = PBXGroup;
+			children = (
+				22ABC34921A3BCD4006062BC /* SubscriptionManager.swift */,
+			);
+			path = Subscription;
 			sourceTree = "<group>";
 		};
 		6F39E32AB6AC8E08A0511869 /* Pods */ = {
@@ -563,6 +574,7 @@
 				22ABC31E2196DBB2006062BC /* FavViewController.swift in Sources */,
 				22ABC31021943AC3006062BC /* SettingItem.swift in Sources */,
 				22ABC31C2196B907006062BC /* UIViewExtension.swift in Sources */,
+				22ABC34A21A3BCD4006062BC /* SubscriptionManager.swift in Sources */,
 				22ABC30E21943A52006062BC /* Section.swift in Sources */,
 				22ABC2FA2191398A006062BC /* UIColorExtension.swift in Sources */,
 				22ABC305219438A7006062BC /* ViewModelFactory.swift in Sources */,
