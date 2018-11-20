@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Kingfisher
 
 class PictureViewController: UIViewController {
     let viewModel: PictureViewModel = ViewModelFactory.shared.create()
@@ -46,7 +47,8 @@ class PictureViewController: UIViewController {
         let bottom = navController.view.safeAreaInsets.bottom
         let safeHeight = screenHeight - top - bottom - navController.navigationBar.height
         for i in 0..<viewModel.butterfly.pictures.count {
-            let imageView = UIImageView(image: UIImage(named: viewModel.butterfly.pictures[i]))
+            let image = ImageCache.default.retrieveImageInDiskCache(forKey: viewModel.butterfly.pictures[i])
+            let imageView = UIImageView(image: image)
             let height = imageView.height > safeHeight ? safeHeight : imageView.height
             imageView.frame = CGRect(x: self.width*CGFloat(i), y: 0, width: width, height: height)
             imageView.contentMode = .scaleAspectFit
