@@ -103,10 +103,13 @@ class PictureViewController: UIViewController {
     
     @objc func openMenu(_ sender: UIBarButtonItem) {
         let alertController = UIAlertController(title: "收藏与保存", message: nil, preferredStyle: UIAlertController.Style.actionSheet)
-        let favAction = UIAlertAction(title: "收藏", style: UIAlertAction.Style.default) { (_) in
+        let favExists = self.viewModel.favExists(self.pageControl.currentPage)
+        let favTitle = favExists ? "已收藏" : "收藏"
+        let favAction = UIAlertAction(title: favTitle, style: UIAlertAction.Style.default) { (_) in
             self.addFav()
         }
-        favAction.isEnabled = canAccess(self.pageControl.currentPage)
+        favAction.isEnabled = canAccess(self.pageControl.currentPage) && !favExists
+        
         let saveAction = UIAlertAction(title: "保存到相册", style: UIAlertAction.Style.default) { (_) in
             self.saveToAlbum()
         }
@@ -118,8 +121,11 @@ class PictureViewController: UIViewController {
     }
     
     private func addFav() {
-        //TODO: fav
-        print(self.pageControl.currentPage)
+        let imageName = self.viewModel.butterfly.pictures[self.pageControl.currentPage]
+        let success = self.viewModel.addFav(picture: imageName)
+        if success {
+            MessageBox.show("收藏成功")
+        }
     }
     
     private func saveToAlbum() {
@@ -131,7 +137,7 @@ class PictureViewController: UIViewController {
     
     @objc func image(image: UIImage, didFinishSavingWithError: NSError?, contextInfo: AnyObject) {
         if didFinishSavingWithError != nil {
-            print("保存相册出错错误")
+            print(didFinishSavingWithError ?? "")
             MessageBox.show("保存失败")
             return
         }

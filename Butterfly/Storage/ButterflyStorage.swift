@@ -32,8 +32,7 @@ class ButterflyStorage {
                 entity.pictures = butterfly.pictures.map { String($0) }.joined(separator: ",")
                 entity.createdDate = butterfly.createdDate
                 entity.updatedDate = butterfly.updatedDate
-                context.saveIfNeeded()
-                return true
+                return context.saveIfNeeded()
             }
         }
         return false

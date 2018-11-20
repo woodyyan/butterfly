@@ -15,6 +15,7 @@
 		2220031D218EC6AB00481176 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2220031B218EC6AB00481176 /* LaunchScreen.storyboard */; };
 		22200328218EC6AB00481176 /* ButterflyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22200327218EC6AB00481176 /* ButterflyTests.swift */; };
 		22200333218EC6AB00481176 /* ButterflyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22200332218EC6AB00481176 /* ButterflyUITests.swift */; };
+		226714FB21A3EEDB006AEF16 /* FavStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226714FA21A3EEDB006AEF16 /* FavStorage.swift */; };
 		22ABC2F221909F0C006062BC /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 22ABC2F121909F0C006062BC /* .gitignore */; };
 		22ABC2F52191376B006062BC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ABC2F42191376B006062BC /* HomeViewController.swift */; };
 		22ABC2F7219137D6006062BC /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 22ABC2F6219137D6006062BC /* .swiftlint.yml */; };
@@ -86,6 +87,7 @@
 		2220032E218EC6AB00481176 /* ButterflyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ButterflyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22200332218EC6AB00481176 /* ButterflyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButterflyUITests.swift; sourceTree = "<group>"; };
 		22200334218EC6AB00481176 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		226714FA21A3EEDB006AEF16 /* FavStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavStorage.swift; sourceTree = "<group>"; };
 		22ABC2F121909F0C006062BC /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		22ABC2F42191376B006062BC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		22ABC2F6219137D6006062BC /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
@@ -312,6 +314,7 @@
 			children = (
 				22ABC33421A263A6006062BC /* CoreStorage.swift */,
 				22ABC33621A28067006062BC /* ButterflyStorage.swift */,
+				226714FA21A3EEDB006AEF16 /* FavStorage.swift */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -585,6 +588,7 @@
 				22ABC31221953339006062BC /* HomeViewModel.swift in Sources */,
 				22ABC33221A262A3006062BC /* ButterflyService.swift in Sources */,
 				22ABC33721A28067006062BC /* ButterflyStorage.swift in Sources */,
+				226714FB21A3EEDB006AEF16 /* FavStorage.swift in Sources */,
 				22ABC31621955423006062BC /* Butterfly.swift in Sources */,
 				22ABC31A2195C938006062BC /* PictureViewModel.swift in Sources */,
 				22ABC2F52191376B006062BC /* HomeViewController.swift in Sources */,

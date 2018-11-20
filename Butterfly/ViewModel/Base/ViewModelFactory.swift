@@ -23,10 +23,11 @@ class ViewModelFactory {
     private init() {
         let context = CoreStorage.shared.persistentContainer.viewContext
         let butterflyStorage = ButterflyStorage(context: context)
+        let favStorage = FavStorage(context: context)
         let service = ButterflyService()
         viewModels.append(HomeViewModel(storage: butterflyStorage, service: service))
         viewModels.append(SettingsViewModel())
-        viewModels.append(PictureViewModel())
+        viewModels.append(PictureViewModel(storage: favStorage))
     }
     
     func create<T>() -> T {

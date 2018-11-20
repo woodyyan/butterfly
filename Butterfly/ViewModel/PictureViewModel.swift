@@ -12,4 +12,20 @@ class PictureViewModel: BaseViewModel {
     let freePicCount = 3
     var butterfly: Butterfly!
     var currentSelected = 0
+    
+    private var storage: FavStorage!
+    
+    init(storage: FavStorage) {
+        super.init()
+        
+        self.storage = storage
+    }
+    
+    func addFav(picture: String) -> Bool {
+        return storage.save(butterflyId: butterfly.butterflyId, name: butterfly.name, picture: picture)
+    }
+    
+    func favExists(_ index: Int) -> Bool {
+        return storage.exists(self.butterfly.pictures[index])
+    }
 }
