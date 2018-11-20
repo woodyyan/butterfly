@@ -89,18 +89,19 @@ class PictureViewController: UIViewController {
     }
     
     private func saveToAlbum() {
-        print(self.pageControl.currentPage)
         let imageName = self.viewModel.butterfly.pictures[self.pageControl.currentPage]
-        //TODO image的名字传参可能不对，等集成了数据库来看一下
-        UIImageWriteToSavedPhotosAlbum(UIImage(named: imageName)!, self, #selector(PictureViewController.image(image:didFinishSavingWithError:contextInfo:)), nil)
+        if let image = ImageCache.default.retrieveImageInDiskCache(forKey: imageName) {
+            UIImageWriteToSavedPhotosAlbum(image, self, #selector(PictureViewController.image(image:didFinishSavingWithError:contextInfo:)), nil)
+        }
     }
     
     @objc func image(image: UIImage, didFinishSavingWithError: NSError?, contextInfo: AnyObject) {
         if didFinishSavingWithError != nil {
             print("保存相册出错错误")
+            MessageBox.show("保存失败")
             return
         }
-        print("OK")
+        MessageBox.show("保存成功")
     }
     
     private func setCurrentPage() {
