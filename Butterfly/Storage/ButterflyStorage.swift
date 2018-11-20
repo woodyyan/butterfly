@@ -44,6 +44,8 @@ class ButterflyStorage {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "ButterflyEntity")
         request.fetchLimit = defaultSize
         request.fetchOffset = page
+        let sort = NSSortDescriptor(key: "createdDate", ascending: false)
+        request.sortDescriptors = [sort]
         do {
             if let results = try self.context.fetch(request) as? [ButterflyEntity] {
                 if !results.isEmpty {
