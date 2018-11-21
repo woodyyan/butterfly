@@ -8,8 +8,13 @@
 
 import Foundation
 import UIKit
+import Kingfisher
 
 class FavViewController: UICollectionViewController {
+    private let viewModel: FavViewModel = ViewModelFactory.shared.create()
+    
+    private let defaultRowNumber = 3
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -41,20 +46,25 @@ class FavViewController: UICollectionViewController {
 
 extension FavViewController {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return defaultRowNumber
     }
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 2
+        return viewModel.favs.count/3 + 1
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        let image = UIImageView(image: #imageLiteral(resourceName: "7"))
-        image.layer.cornerRadius = Configs.cornerRadius
-        image.layer.masksToBounds = true
-        image.frame = CGRect(x: 0, y: 0, width: Configs.imageWidth, height: Configs.imageHeight)
-        cell.addSubview(image)
+        let index = indexPath.section*defaultRowNumber+indexPath.row
+        if index < viewModel.favs.count {
+            let fav = viewModel.favs[index]
+            let image = ImageCache.default.retrieveImageInDiskCache(forKey: fav.picture!)
+            let imageView = UIImageView(image: image)
+            imageView.layer.cornerRadius = Configs.cornerRadius
+            imageView.layer.masksToBounds = true
+            imageView.frame = CGRect(x: 0, y: 0, width: Configs.imageWidth, height: Configs.imageHeight)
+            cell.addSubview(imageView)
+        }
         return cell
     }
 }

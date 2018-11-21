@@ -16,6 +16,7 @@
 		22200328218EC6AB00481176 /* ButterflyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22200327218EC6AB00481176 /* ButterflyTests.swift */; };
 		22200333218EC6AB00481176 /* ButterflyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22200332218EC6AB00481176 /* ButterflyUITests.swift */; };
 		226714FB21A3EEDB006AEF16 /* FavStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226714FA21A3EEDB006AEF16 /* FavStorage.swift */; };
+		226714FD21A3FCA5006AEF16 /* FavViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226714FC21A3FCA5006AEF16 /* FavViewModel.swift */; };
 		22ABC2F221909F0C006062BC /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 22ABC2F121909F0C006062BC /* .gitignore */; };
 		22ABC2F52191376B006062BC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ABC2F42191376B006062BC /* HomeViewController.swift */; };
 		22ABC2F7219137D6006062BC /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 22ABC2F6219137D6006062BC /* .swiftlint.yml */; };
@@ -88,6 +89,7 @@
 		22200332218EC6AB00481176 /* ButterflyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButterflyUITests.swift; sourceTree = "<group>"; };
 		22200334218EC6AB00481176 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		226714FA21A3EEDB006AEF16 /* FavStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavStorage.swift; sourceTree = "<group>"; };
+		226714FC21A3FCA5006AEF16 /* FavViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavViewModel.swift; sourceTree = "<group>"; };
 		22ABC2F121909F0C006062BC /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		22ABC2F42191376B006062BC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		22ABC2F6219137D6006062BC /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
@@ -264,6 +266,7 @@
 				22ABC3082194394C006062BC /* SettingsViewModel.swift */,
 				22ABC31121953339006062BC /* HomeViewModel.swift */,
 				22ABC3192195C938006062BC /* PictureViewModel.swift */,
+				226714FC21A3FCA5006AEF16 /* FavViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -577,6 +580,7 @@
 				22ABC31E2196DBB2006062BC /* FavViewController.swift in Sources */,
 				22ABC31021943AC3006062BC /* SettingItem.swift in Sources */,
 				22ABC31C2196B907006062BC /* UIViewExtension.swift in Sources */,
+				226714FD21A3FCA5006AEF16 /* FavViewModel.swift in Sources */,
 				22ABC34A21A3BCD4006062BC /* SubscriptionManager.swift in Sources */,
 				22ABC30E21943A52006062BC /* Section.swift in Sources */,
 				22ABC2FA2191398A006062BC /* UIColorExtension.swift in Sources */,

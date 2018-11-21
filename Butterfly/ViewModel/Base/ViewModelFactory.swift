@@ -28,6 +28,7 @@ class ViewModelFactory {
         viewModels.append(HomeViewModel(storage: butterflyStorage, service: service))
         viewModels.append(SettingsViewModel())
         viewModels.append(PictureViewModel(storage: favStorage))
+        viewModels.append(FavViewModel(storage: favStorage))
     }
     
     func create<T>() -> T {
