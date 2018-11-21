@@ -45,13 +45,7 @@ class PictureViewController: UIViewController {
         scrollView.backgroundColor = UIColor.background
         scrollView.delegate = self
         
-        for i in 0..<viewModel.butterfly.pictures.count {
-            if canAccess(i) {
-                scrollView.addSubview(getNormalImage(viewModel.butterfly.pictures[i], i))
-            } else {
-                scrollView.addSubview(getSubImageView(viewModel.butterfly.pictures[i], i))
-            }
-        }
+        addImagesToScrollView()
         
         pageControl.numberOfPages = viewModel.butterfly.pictures.count
         pageControl.backgroundColor = UIColor.clear
@@ -68,6 +62,24 @@ class PictureViewController: UIViewController {
         setCurrentPage()
     }
     
+    private func addImagesToScrollView() {
+        for i in 0..<viewModel.butterfly.pictures.count {
+            if canAccess(i) {
+                scrollView.addSubview(getNormalImage(viewModel.butterfly.pictures[i], i))
+            } else {
+                scrollView.addSubview(getSubImageView(viewModel.butterfly.pictures[i], i))
+            }
+        }
+    }
+    
+    private func resetScrollView() {
+        scrollView.subviews.forEach { (view) in
+            view.removeFromSuperview()
+        }
+        addImagesToScrollView()
+        setCurrentPage()
+    }
+    
     private func getSubImageView(_ key: String, _ index: Int) -> UIView {
         let baseView = UIView(frame: self.view.frame)
         
@@ -79,16 +91,40 @@ class PictureViewController: UIViewController {
         let image = ImageCache.default.retrieveImageInDiskCache(forKey: key)
         let imageView = UIImageView(image: image)
         let height = imageView.height > safeHeight ? safeHeight : imageView.height
-        imageView.frame = CGRect(x: self.width*CGFloat(index), y: 0, width: width, height: height)
+        baseView.frame = CGRect(x: self.width*CGFloat(index), y: 0, width: width, height: height)
         imageView.contentMode = .scaleAspectFit
         baseView.addSubview(imageView)
+        imageView.snp.makeConstraints { (make) in
+            make.width.height.equalToSuperview()
+        }
         
         let blurEffect = UIBlurEffect(style: .dark)
         let blurView = UIVisualEffectView(effect: blurEffect)
         blurView.frame = self.view.bounds
         imageView.addSubview(blurView)
         
+        let button = UIButton(type: UIButton.ButtonType.custom)
+        button.setTitle("¥订阅会员", for: UIControl.State.normal)
+        button.setTitleColor(UIColor.white, for: UIControl.State.normal)
+        button.backgroundColor = UIColor.themeColor
+        button.layer.cornerRadius = 18
+        button.layer.masksToBounds = true
+        button.addTarget(self, action: #selector(PictureViewController.openSubController(_:)), for: UIControl.Event.touchUpInside)
+        baseView.addSubview(button)
+        button.snp.makeConstraints { (make) in
+            make.width.equalTo(240)
+            make.height.equalTo(36)
+            make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview()
+        }
+        
         return baseView
+    }
+    
+    @objc func openSubController(_ sender: UIButton) {
+        let subViewController = SubViewController()
+        subViewController.delegate = self
+        self.present(subViewController, animated: true, completion: nil)
     }
     
     private func getNormalImage(_ key: String, _ index: Int) -> ImageView {
@@ -182,5 +218,11 @@ extension PictureViewController: UIScrollViewDelegate {
         let pageNumber = round(scrollView.contentOffset.x / scrollView.frame.size.width)
         pageControl.currentPage = Int(pageNumber)
         self.viewModel.currentSelected = Int(pageNumber)
+    }
+}
+
+extension PictureViewController: Subscription {
+    func subscribed() {
+        self.resetScrollView()
     }
 }

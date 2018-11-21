@@ -11,9 +11,11 @@ import UIKit
 import SnapKit
 
 class SubViewController: UITableViewController {
+    
+    var delegate: Subscription?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.tableView.backgroundColor = UIColor.white
         self.tableView.separatorStyle = .none
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
@@ -295,4 +297,8 @@ extension SubViewController {
         }
         return cell
     }
+}
+
+protocol Subscription {
+    func subscribed()
 }

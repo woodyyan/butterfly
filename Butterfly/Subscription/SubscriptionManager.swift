@@ -18,7 +18,19 @@ class SubscriptionManager {
         return single
     }
     
-    func isSubscribed() -> Bool {
-        return false
+    private var type = SubscriptionType.none
+    
+    func setSubscriptionStatus(type: SubscriptionType) {
+        self.type = type
     }
+    
+    func isSubscribed() -> Bool {
+        return type != SubscriptionType.none
+    }
+}
+
+enum SubscriptionType {
+    case none
+    case monthly
+    case yearly
 }
