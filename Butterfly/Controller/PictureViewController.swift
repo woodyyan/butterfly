@@ -16,12 +16,6 @@ class PictureViewController: UIViewController {
     private var scrollView = UIScrollView()
     private var pageControl = UIPageControl()
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        self.navigationController?.navigationBar.isTranslucent = false
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,9 +25,13 @@ class PictureViewController: UIViewController {
     private func initUI() {
         self.title = viewModel.butterfly.name
         
+        self.navigationController?.navigationBar.barTintColor = UIColor.background
+        self.navigationController?.navigationBar.backgroundColor = UIColor.background
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.themeColor]
+        self.navigationController?.navigationBar.tintColor = UIColor.themeColor
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.navigationBar.isTranslucent = false
         
         let rightItem = UIBarButtonItem(image: #imageLiteral(resourceName: "more"), style: .plain, target: self, action: #selector(PictureViewController.openMenu(_:)))
         self.navigationItem.rightBarButtonItem = rightItem
