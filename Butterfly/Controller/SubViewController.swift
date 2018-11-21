@@ -216,10 +216,12 @@ extension SubViewController {
     
     @objc func subscribeByMonth(_ sender: UIButton) {
         print(35)
+        //TODO: 订阅成功调delegate
     }
     
     @objc func subscribeByYear(_ sender: UIButton) {
         print(34)
+        //TODO: 订阅成功调delegate
     }
     
     private func getMonthMemberButtonCell() -> UITableViewCell {
