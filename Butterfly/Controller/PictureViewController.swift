@@ -16,6 +16,12 @@ class PictureViewController: UIViewController {
     private var scrollView = UIScrollView()
     private var pageControl = UIPageControl()
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        self.navigationController?.navigationBar.isTranslucent = false
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,7 +41,7 @@ class PictureViewController: UIViewController {
         scrollView.frame = self.view.frame
         self.view.addSubview(scrollView)
         scrollView.isPagingEnabled = true
-        scrollView.contentSize = CGSize(width: self.width*9, height: 0)
+        scrollView.contentSize = CGSize(width: self.width*CGFloat(viewModel.butterfly.pictures.count), height: 0)
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.showsVerticalScrollIndicator = false
         scrollView.backgroundColor = UIColor.background
@@ -79,7 +85,7 @@ class PictureViewController: UIViewController {
         imageView.contentMode = .scaleAspectFit
         baseView.addSubview(imageView)
         
-        let blurEffect = UIBlurEffect(style: .light)
+        let blurEffect = UIBlurEffect(style: .dark)
         let blurView = UIVisualEffectView(effect: blurEffect)
         blurView.frame = self.view.bounds
         imageView.addSubview(blurView)
@@ -157,7 +163,7 @@ class PictureViewController: UIViewController {
     
     private func canAccess(_ index: Int) -> Bool {
         let isSubscribed = SubscriptionManager.shared.isSubscribed()
-        return isSubscribed || index < viewModel.freePicCount
+        return isSubscribed || index < viewModel.freePicCount || viewModel.isFromFav
     }
 }
 

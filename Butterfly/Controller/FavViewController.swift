@@ -19,6 +19,8 @@ class FavViewController: UICollectionViewController {
         super.viewDidLoad()
         
         initUI()
+        
+        viewModel.fetch()
     }
 
     init() {
@@ -66,5 +68,21 @@ extension FavViewController {
             cell.addSubview(imageView)
         }
         return cell
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let index = indexPath.section*defaultRowNumber+indexPath.row
+        if index < viewModel.favs.count {
+            let fav = viewModel.favs[index]
+            var butterfly = Butterfly()
+            butterfly.name = fav.name!
+            butterfly.butterflyId = Int(fav.butterflyId)
+            butterfly.pictures = [fav.picture!]
+            
+            let pictureViewController = PictureViewController()
+            pictureViewController.viewModel.butterfly = butterfly
+            pictureViewController.viewModel.isFromFav = true
+            self.navigationController?.pushViewController(pictureViewController, animated: true)
+        }
     }
 }

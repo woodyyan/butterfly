@@ -81,6 +81,7 @@ extension HomeViewController: ImageScrollTableCellDelegate {
     func imageScrollTableCell(tableCell: ImageScrollTalbeCell, butterfly: Butterfly, selected: Int) {
         let pictureViewController = PictureViewController()
         pictureViewController.viewModel.butterfly = butterfly
+        pictureViewController.viewModel.isFromFav = false
         pictureViewController.viewModel.currentSelected = selected
         self.navigationController?.pushViewController(pictureViewController, animated: true)
     }

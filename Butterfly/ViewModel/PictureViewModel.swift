@@ -12,6 +12,7 @@ class PictureViewModel: BaseViewModel {
     let freePicCount = 3
     var butterfly: Butterfly!
     var currentSelected = 0
+    var isFromFav = false
     
     private var storage: FavStorage!
     

@@ -18,11 +18,9 @@ class FavViewModel: BaseViewModel {
         super.init()
         
         self.storage = storage
-        
-        fetch()
     }
     
-    private func fetch() {
+    func fetch() {
         favs = storage.fetch(page: nextPage)
         nextPage += 1
     }
