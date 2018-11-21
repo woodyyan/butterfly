@@ -110,11 +110,15 @@ class PictureViewController: UIViewController {
     @objc func openMenu(_ sender: UIBarButtonItem) {
         let alertController = UIAlertController(title: "收藏与保存", message: nil, preferredStyle: UIAlertController.Style.actionSheet)
         let favExists = self.viewModel.favExists(self.pageControl.currentPage)
-        let favTitle = favExists ? "已收藏" : "收藏"
+        let favTitle = favExists ? "取消收藏" : "收藏"
         let favAction = UIAlertAction(title: favTitle, style: UIAlertAction.Style.default) { (_) in
-            self.addFav()
+            if favExists {
+                self.removeFav()
+            } else {
+                self.addFav()
+            }
         }
-        favAction.isEnabled = canAccess(self.pageControl.currentPage) && !favExists
+        favAction.isEnabled = canAccess(self.pageControl.currentPage)
         
         let saveAction = UIAlertAction(title: "保存到相册", style: UIAlertAction.Style.default) { (_) in
             self.saveToAlbum()
@@ -131,6 +135,14 @@ class PictureViewController: UIViewController {
         let success = self.viewModel.addFav(picture: imageName)
         if success {
             MessageBox.show("收藏成功")
+        }
+    }
+    
+    private func removeFav() {
+        let imageName = self.viewModel.butterfly.pictures[self.pageControl.currentPage]
+        let success = self.viewModel.removeFav(picture: imageName)
+        if success {
+            MessageBox.show("取消成功")
         }
     }
     

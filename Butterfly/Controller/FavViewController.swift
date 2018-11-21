@@ -15,12 +15,17 @@ class FavViewController: UICollectionViewController {
     
     private let defaultRowNumber = 3
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        viewModel.fetch()
+        self.collectionView.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         initUI()
-        
-        viewModel.fetch()
     }
 
     init() {
@@ -48,7 +53,7 @@ class FavViewController: UICollectionViewController {
 
 extension FavViewController {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return defaultRowNumber
+        return viewModel.favs.count % defaultRowNumber
     }
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {

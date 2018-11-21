@@ -26,6 +26,10 @@ class PictureViewModel: BaseViewModel {
         return storage.save(butterflyId: butterfly.butterflyId, name: butterfly.name, picture: picture)
     }
     
+    func removeFav(picture: String) -> Bool {
+        return storage.delete(picture: picture)
+    }
+    
     func favExists(_ index: Int) -> Bool {
         return storage.exists(self.butterfly.pictures[index])
     }

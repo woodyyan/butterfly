@@ -41,6 +41,24 @@ class FavStorage {
         return false
     }
     
+    func delete(picture: String) -> Bool {
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "FavEntity")
+        let predicate = NSPredicate(format: "%K == %@", "picture", picture)
+        request.predicate = predicate
+        do {
+            if let results = try self.context.fetch(request) as? [FavEntity] {
+                if !results.isEmpty {
+                    for result in results {
+                        self.context.delete(result)
+                    }
+                    return self.context.saveIfNeeded()
+                }
+            }
+        } catch {
+        }
+        return false
+    }
+    
     func fetch(page: Int) -> [FavEntity] {
         var favs = [FavEntity]()
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "FavEntity")
