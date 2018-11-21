@@ -12,7 +12,7 @@ import SnapKit
 
 class SubViewController: UITableViewController {
     
-    var delegate: Subscription?
+    weak var delegate: Subscription?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -299,6 +299,6 @@ extension SubViewController {
     }
 }
 
-protocol Subscription {
+protocol Subscription: NSObjectProtocol {
     func subscribed()
 }
