@@ -14,6 +14,8 @@ struct Configs {
     public static let imageWidth = 100
     public static let cornerRadius: CGFloat = 6
     public static let appStoreUrl = "http://"
+    public static let memberTypeKey = "butterfly-member-type"
+    public static let memberPurchaseDateKey = "butterfly-member-purchase-date"
     
     public static let butterflyApiBaseUrl = "http://47.96.151.169:8083/butterfly-api"
 }

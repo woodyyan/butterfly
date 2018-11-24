@@ -12,6 +12,8 @@ import SnapKit
 
 class SubViewController: UITableViewController {
     
+    private let indicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.gray)
+    
     weak var delegate: Subscription?
     
     override func viewDidLoad() {
@@ -34,6 +36,10 @@ class SubViewController: UITableViewController {
             make.top.equalToSuperview().offset(10)
             make.right.equalToSuperview().offset(self.tableView.width - 20)
         }
+        
+        indicator.center = self.view.center
+        self.view.addSubview(indicator)
+        indicator.stopAnimating()
     }
     
     @objc func dismiss(_ sender: UIButton) {
@@ -215,13 +221,24 @@ extension SubViewController {
     }
     
     @objc func subscribeByMonth(_ sender: UIButton) {
-        print(35)
-        //TODO: 订阅成功调delegate
+        subscribe(type: SubscriptionType.monthly)
     }
     
     @objc func subscribeByYear(_ sender: UIButton) {
-        print(34)
-        //TODO: 订阅成功调delegate
+        subscribe(type: SubscriptionType.yearly)
+    }
+    
+    private func subscribe(type: SubscriptionType) {
+        indicator.startAnimating()
+        SubscriptionManager.shared.purchase(type: type) { (success, message) in
+            self.indicator.stopAnimating()
+            if success {
+                MessageBox.show("订阅成功")
+                self.delegate?.subscribed()
+            } else {
+                MessageBox.show(message)
+            }
+        }
     }
     
     private func getMonthMemberButtonCell() -> UITableViewCell {

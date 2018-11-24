@@ -9,4 +9,5 @@ target 'Butterfly' do
 	pod 'ObjectMapper', '~> 3.4'
 	pod 'Kingfisher', '~> 4.0'
 	pod "ESPullToRefresh"
+	pod 'SwiftyStoreKit'
 end
