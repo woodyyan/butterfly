@@ -21,9 +21,9 @@ class SubscriptionManager {
     
     func setSubscriptionStatus(productId: String) {
         var type = SubscriptionType.none
-        if productId == "" {
+        if productId == Configs.memberMonthlyProductId {
             type = .monthly
-        } else if productId == "" {
+        } else if productId == Configs.memberYearlyProductId {
             type = .yearly
         }
         
@@ -41,7 +41,7 @@ class SubscriptionManager {
     
     // swiftlint:disable cyclomatic_complexity
     func purchase(type: SubscriptionType, completion: @escaping (Bool, String) -> Void) {
-        let productId = type == SubscriptionType.monthly ? "123" : "456"
+        let productId = type == SubscriptionType.monthly ? Configs.memberMonthlyProductId : Configs.memberYearlyProductId
         SwiftyStoreKit.purchaseProduct(productId, quantity: 1, atomically: true) { result in
             switch result {
             case .success(let purchase):
