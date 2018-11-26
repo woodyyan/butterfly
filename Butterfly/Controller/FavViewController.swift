@@ -43,7 +43,7 @@ class FavViewController: UICollectionViewController {
         self.collectionView.backgroundColor = UIColor.background
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.navigationBar.isTranslucent = false
         
         self.collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
     }
@@ -79,9 +79,6 @@ extension FavViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
         let index = indexPath.section*defaultRowNumber+indexPath.row
         if index < viewModel.favs.count {
-//            cell.subviews.forEach { (view) in
-//                view.removeFromSuperview()
-//            }
             let fav = viewModel.favs[index]
             let image = ImageCache.default.retrieveImageInDiskCache(forKey: fav.picture!)
             let imageView = UIImageView(image: image)
@@ -89,7 +86,6 @@ extension FavViewController {
             imageView.layer.cornerRadius = Configs.cornerRadius
             imageView.layer.masksToBounds = true
             imageView.frame = CGRect(x: 0, y: 0, width: Configs.imageWidth, height: Configs.imageHeight)
-//            cell.addSubview(imageView)
             cell.backgroundView = imageView
         }
         return cell

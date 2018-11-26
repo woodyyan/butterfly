@@ -18,7 +18,7 @@ class AboutViewController: UIViewController {
         self.view.backgroundColor = UIColor.background
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.navigationBar.isTranslucent = false
         
         initUI()
     }

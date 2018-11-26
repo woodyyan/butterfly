@@ -28,6 +28,9 @@ class SettingsViewController: UITableViewController {
         self.navigationController?.navigationBar.barTintColor = UIColor.background
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.themeColor]
         self.navigationController?.navigationBar.tintColor = UIColor.themeColor
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = false
         
         self.tableView = UITableView(frame: self.tableView.frame, style: UITableView.Style.grouped)
         self.tableView.backgroundColor = UIColor.background
