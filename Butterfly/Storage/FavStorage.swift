@@ -59,11 +59,11 @@ class FavStorage {
         return false
     }
     
-    func fetch(page: Int) -> [FavEntity] {
+    func fetch() -> [FavEntity] {
         var favs = [FavEntity]()
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "FavEntity")
-        request.fetchLimit = defaultSize
-        request.fetchOffset = page
+//        request.fetchLimit = defaultSize
+//        request.fetchOffset = page
         let sort = NSSortDescriptor(key: "createdDate", ascending: false)
         request.sortDescriptors = [sort]
         do {

@@ -21,11 +21,6 @@ class FavViewModel: BaseViewModel {
     }
     
     func fetch() {
-        favs = storage.fetch(page: 0)
-    }
-    
-    func fetchNext() {
-        favs = storage.fetch(page: nextPage)
-        nextPage += 1
+        favs = storage.fetch()
     }
 }

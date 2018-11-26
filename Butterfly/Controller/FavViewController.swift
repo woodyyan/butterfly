@@ -17,14 +17,12 @@ class FavViewController: UICollectionViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        viewModel.fetch()
-        self.collectionView.reloadData()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        viewModel.fetch()
         initUI()
     }
 
@@ -53,24 +51,46 @@ class FavViewController: UICollectionViewController {
 
 extension FavViewController {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.favs.count % defaultRowNumber
+        let favCount = viewModel.favs.count
+        if favCount == 0 {
+            return 0
+        }
+        if section < getSectionNumber(favCount: favCount) - 1 {
+            return defaultRowNumber
+        } else if favCount%defaultRowNumber == 0 {
+            return defaultRowNumber
+        }
+        return favCount%defaultRowNumber
+    }
+    
+    private func getSectionNumber(favCount: Int) -> Int {
+        if favCount % defaultRowNumber == 0 {
+            return favCount/defaultRowNumber
+        } else {
+            return favCount/defaultRowNumber + 1
+        }
     }
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return viewModel.favs.count/3 + 1
+        return getSectionNumber(favCount: self.viewModel.favs.count)
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
         let index = indexPath.section*defaultRowNumber+indexPath.row
         if index < viewModel.favs.count {
+//            cell.subviews.forEach { (view) in
+//                view.removeFromSuperview()
+//            }
             let fav = viewModel.favs[index]
             let image = ImageCache.default.retrieveImageInDiskCache(forKey: fav.picture!)
             let imageView = UIImageView(image: image)
+            imageView.contentMode = .scaleAspectFill
             imageView.layer.cornerRadius = Configs.cornerRadius
             imageView.layer.masksToBounds = true
             imageView.frame = CGRect(x: 0, y: 0, width: Configs.imageWidth, height: Configs.imageHeight)
-            cell.addSubview(imageView)
+//            cell.addSubview(imageView)
+            cell.backgroundView = imageView
         }
         return cell
     }
