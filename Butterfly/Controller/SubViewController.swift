@@ -190,7 +190,7 @@ extension SubViewController {
             make.centerY.equalToSuperview()
         }
         let priceLabel = UILabel()
-        priceLabel.text = "¥96/1年"
+        priceLabel.text = "¥88/1年"
         priceLabel.textColor = UIColor.white
         priceLabel.font = UIFont.systemFont(ofSize: 12)
         button.addSubview(priceLabel)

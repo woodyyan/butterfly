@@ -27,6 +27,10 @@ class ImageScrollTalbeCell: UITableViewCell {
     }
     
     func initUI(butterfly: Butterfly) {
+        self.subviews.forEach { (view) in
+            view.removeFromSuperview()
+        }
+        
         self.butterfly = butterfly
         self.backgroundColor = UIColor.background
         
