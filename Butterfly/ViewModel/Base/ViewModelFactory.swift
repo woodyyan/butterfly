@@ -26,7 +26,7 @@ class ViewModelFactory {
         let favStorage = FavStorage(context: context)
         let service = ButterflyService()
         viewModels.append(HomeViewModel(storage: butterflyStorage, service: service))
-        viewModels.append(SettingsViewModel())
+        viewModels.append(SettingsViewModel(storage: favStorage))
         viewModels.append(PictureViewModel(storage: favStorage))
         viewModels.append(FavViewModel(storage: favStorage))
     }

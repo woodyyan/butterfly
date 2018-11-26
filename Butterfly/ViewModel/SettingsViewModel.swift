@@ -9,15 +9,18 @@
 import Foundation
 
 class SettingsViewModel: BaseViewModel {
-    var settings = Settings()
+    private var storage: FavStorage!
+    var settings: Settings!
     
-    override init() {
+    init(storage: FavStorage) {
         super.init()
         
-        initSettings()
+        self.storage = storage
     }
     
-    private func initSettings() {
+    func initSettings() {
+        settings = Settings()
+        
         var subscriptionSection = Section()
         var subscriptionItem = SettingItem(title: "订阅")
         subscriptionItem.detailText = "过期"
@@ -27,7 +30,7 @@ class SettingsViewModel: BaseViewModel {
         
         var favSection = Section()
         var favItem = SettingItem(title: "收藏")
-        favItem.detailText = "12张"
+        favItem.detailText = "\(storage.totalCount())张"
         favItem.icon = "fav"
         favSection.items.append(favItem)
         settings.sections.append(favSection)

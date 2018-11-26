@@ -80,4 +80,16 @@ class FavStorage {
         
         return favs
     }
+    
+    func totalCount() -> Int {
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "FavEntity")
+        do {
+            let count = try self.context.count(for: request)
+            return count
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+        return 0
+    }
 }
