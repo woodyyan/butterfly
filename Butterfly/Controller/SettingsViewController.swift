@@ -31,6 +31,7 @@ class SettingsViewController: UITableViewController {
         
         self.tableView = UITableView(frame: self.tableView.frame, style: UITableView.Style.grouped)
         self.tableView.backgroundColor = UIColor.background
+        self.tableView.separatorColor = UIColor.background
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         let footerImage = UIImageView(image: #imageLiteral(resourceName: "butterfly"))
         let footerView = UIView()
