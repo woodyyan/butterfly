@@ -38,11 +38,9 @@ class ButterflyStorage {
         return false
     }
     
-    func fetch(page: Int) -> [Butterfly] {
+    func fetch() -> [Butterfly] {
         var butterflies = [Butterfly]()
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "ButterflyEntity")
-        request.fetchLimit = defaultSize
-        request.fetchOffset = page
         let sort = NSSortDescriptor(key: "createdDate", ascending: false)
         request.sortDescriptors = [sort]
         do {

@@ -14,7 +14,7 @@ class HomeViewModel: BaseViewModel {
     private var storage: ButterflyStorage!
     private var service: ButterflyService!
     
-    var delegate: FetchButterflyDelegate?
+    weak var delegate: FetchButterflyDelegate?
     var butterflySections = [ButterflySection]()
     
     init(storage: ButterflyStorage, service: ButterflyService) {
@@ -23,12 +23,12 @@ class HomeViewModel: BaseViewModel {
         self.storage = storage
         self.service = service
         
-        fetchFromServer()
+        fetchNewFromServer()
         fetchFromLocal()
     }
     
     private func fetchFromLocal() {
-        let butterflies = storage.fetch(page: 0)
+        let butterflies = storage.fetch()
         let dic = Dictionary(grouping: butterflies, by: { $0.createdDate.toTitleString() })
         self.butterflySections = dic.map { (arg) -> ButterflySection in
             let (key, value) = arg
@@ -36,35 +36,27 @@ class HomeViewModel: BaseViewModel {
         }
     }
     
-    func fetchFromServer() {
-        service.fetchNewButterflies { (success) in
+    func fetchNewFromServer() {
+        fetchFromServer(page: 0, isPullRefresh: true)
+    }
+    
+    func fetchMoreFromServer() {
+        let butterflies = self.butterflySections.flatMap { (section) -> [Butterfly] in
+            return section.butterflies
+        }
+        fetchFromServer(page: butterflies.count/20, isPullRefresh: false)
+    }
+    
+    private func fetchFromServer(page: Int, isPullRefresh: Bool) {
+        service.fetchNewButterflies(page: page) { (success) in
             if success {
                 self.fetchFromLocal()
             }
-            self.delegate?.fetchButterfly(viewModel: self, success: success)
+            self.delegate?.fetchButterfly(viewModel: self, success: success, isPullRefresh: isPullRefresh)
         }
     }
-        
-//        for _ in 0...1 {
-//            var dailySet = ButterflyData(date: "today")
-//            for _ in 0...2 {
-//                var butterfly = Butterfly()
-//                butterfly
-//                butterfly.pictures.append("2")
-//                butterfly.pictures.append("7")
-//                butterfly.pictures.append("1")
-//                butterfly.pictures.append("7")
-//                butterfly.pictures.append("2")
-//                butterfly.pictures.append("7")
-//                butterfly.pictures.append("1")
-//                butterfly.pictures.append("2")
-//                butterfly.pictures.append("1")
-//                dailySet.butterflies.append(butterfly)
-//            }
-//            butterflySets.append(dailySet)
-//        }
 }
 
 protocol FetchButterflyDelegate: NSObjectProtocol {
-    func fetchButterfly(viewModel: HomeViewModel, success: Bool)
+    func fetchButterfly(viewModel: HomeViewModel, success: Bool, isPullRefresh: Bool)
 }

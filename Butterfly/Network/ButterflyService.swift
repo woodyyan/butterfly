@@ -11,9 +11,9 @@ import Moya
 import CoreData
 
 class ButterflyService {
-    func fetchNewButterflies(complete: @escaping (Bool) -> Void) {
+    func fetchNewButterflies(page: Int, complete: @escaping (Bool) -> Void) {
         let provider = MoyaProvider<ButterflyAPI>()
-        provider.request(ButterflyAPI.searchButterfly(page: 0, size: 20)) { (result) in
+        provider.request(ButterflyAPI.searchButterfly(page: page, size: 20)) { (result) in
             switch result {
             case let .success(response):
                 let data = response.data

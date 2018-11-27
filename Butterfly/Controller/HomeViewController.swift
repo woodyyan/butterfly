@@ -43,22 +43,16 @@ class HomeViewController: UITableViewController {
     }
     
     private func initPullToRefresh() {
-        self.tableView.es.addPullToRefresh {
+        self.tableView.expiredTimeInterval = 15.0
+        
+        self.tableView.es.addPullToRefresh(animator: ButterflyRefreshAnimator.init()) {
             [unowned self] in
-            self.viewModel.fetchFromServer()
-            /// 设置ignoreFooter来处理不需要显示footer的情况
-//            self.tableView.es.stopPullToRefresh(ignoreDate: true, ignoreFooter: false)
+            self.viewModel.fetchNewFromServer()
         }
         
-        self.tableView.es.addInfiniteScrolling {
+        self.tableView.es.addInfiniteScrolling(animator: ButterflyFooterAnimator.init()) {
             [unowned self] in
-            /// 在这里做加载更多相关事件
-            /// ...
-            /// 如果你的加载更多事件成功，调用es_stopLoadingMore()重置footer状态
-            self.tableView.es.stopLoadingMore()
-            /// 通过es_noticeNoMoreData()设置footer暂无数据状态
-            
-            self.tableView.es.noticeNoMoreData()
+            self.viewModel.fetchMoreFromServer()
         }
     }
     
@@ -112,8 +106,16 @@ extension HomeViewController: ImageScrollTableCellDelegate {
 }
 
 extension HomeViewController: FetchButterflyDelegate {
-    func fetchButterfly(viewModel: HomeViewModel, success: Bool) {
-        self.tableView.es.stopPullToRefresh(ignoreDate: true)
+    func fetchButterfly(viewModel: HomeViewModel, success: Bool, isPullRefresh: Bool) {
+        if isPullRefresh {
+            self.tableView.es.stopPullToRefresh(ignoreDate: true)
+        } else {
+            if success {
+                self.tableView.es.stopLoadingMore()
+            } else {
+                self.tableView.es.noticeNoMoreData()
+            }
+        }
         if success {
             self.tableView.reloadData()
         }
