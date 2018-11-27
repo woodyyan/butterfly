@@ -16,6 +16,16 @@ class SubViewController: UITableViewController {
     
     weak var delegate: Subscription?
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        ALBBMANPageHitHelper.getInstance()?.pageAppear(self)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        ALBBMANPageHitHelper.getInstance()?.pageDisAppear(self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.backgroundColor = UIColor.white
@@ -262,6 +272,13 @@ extension SubViewController {
     }
     
     private func subscribe(type: SubscriptionType) {
+        let builder = ALBBMANCustomHitBuilder.init()
+        builder.setEventLabel("订阅点击")
+        builder.setEventPage("订阅")
+        builder.setProperty("type", value: String(type.rawValue))
+        let traker = ALBBMANAnalytics.getInstance()?.getDefaultTracker()
+        traker?.send(builder.build())
+        
         indicator.startAnimating()
         SubscriptionManager.shared.purchase(type: type) { (success, message) in
             self.indicator.stopAnimating()

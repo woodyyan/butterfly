@@ -13,6 +13,16 @@ class HomeViewController: UITableViewController {
     
     let viewModel: HomeViewModel = ViewModelFactory.shared.create()
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        ALBBMANPageHitHelper.getInstance()?.pageAppear(self)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        ALBBMANPageHitHelper.getInstance()?.pageDisAppear(self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

@@ -19,6 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         self.window!.rootViewController = UINavigationController.init(rootViewController: HomeViewController())
         
+        initAliyunService()
+        
         SwiftyStoreKit.completeTransactions { (purchases) in
             for purchase in purchases {
                 switch purchase.transaction.transactionState {
@@ -36,6 +38,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         return true
+    }
+    
+    private func initAliyunService() {
+        let man = ALBBMANAnalytics.getInstance()
+        man?.autoInit()
+//        man?.turnOnDebug()
     }
 
     func applicationWillTerminate(_ application: UIApplication) {

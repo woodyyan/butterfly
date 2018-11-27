@@ -12,8 +12,11 @@ import CoreData
 
 class ButterflyService {
     func fetchNewButterflies(page: Int, complete: @escaping (Bool) -> Void) {
+        let builder = ALBBMANNetworkHitBuilder.init(host: "butterfly", method: "GET")
+        builder!.requestStart()
         let provider = MoyaProvider<ButterflyAPI>()
         provider.request(ButterflyAPI.searchButterfly(page: page, size: 20)) { (result) in
+            builder?.requestEnd(withBytes: 0)
             switch result {
             case let .success(response):
                 let data = response.data
@@ -22,9 +25,16 @@ class ButterflyService {
                     complete(success)
                 }
             case let .failure(error):
+                if let message = error.errorDescription {
+                    let networkError = ALBBMANNetworkError.withHttpException5()
+                    networkError?.setProperty("errorMessage", value: message)
+                    builder!.requestEndWithError(networkError)
+                }
                 print(error)
                 complete(false)
             }
+            let tracker = ALBBMANAnalytics.getInstance()?.getDefaultTracker()
+            tracker?.send(builder!.build())
         }
     }
     

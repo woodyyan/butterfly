@@ -19,6 +19,7 @@
 		226714FD21A3FCA5006AEF16 /* FavViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226714FC21A3FCA5006AEF16 /* FavViewModel.swift */; };
 		226714FF21AD169E006AEF16 /* ButterflyRefreshAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226714FE21AD169E006AEF16 /* ButterflyRefreshAnimator.swift */; };
 		2267150121AD1F0E006AEF16 /* ButterflyFooterAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2267150021AD1F0E006AEF16 /* ButterflyFooterAnimator.swift */; };
+		2267150321AD2AF7006AEF16 /* AliyunEmasServices-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2267150221AD2AF7006AEF16 /* AliyunEmasServices-Info.plist */; };
 		22ABC2F221909F0C006062BC /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 22ABC2F121909F0C006062BC /* .gitignore */; };
 		22ABC2F52191376B006062BC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ABC2F42191376B006062BC /* HomeViewController.swift */; };
 		22ABC2F7219137D6006062BC /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 22ABC2F6219137D6006062BC /* .swiftlint.yml */; };
@@ -94,6 +95,8 @@
 		226714FC21A3FCA5006AEF16 /* FavViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavViewModel.swift; sourceTree = "<group>"; };
 		226714FE21AD169E006AEF16 /* ButterflyRefreshAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButterflyRefreshAnimator.swift; sourceTree = "<group>"; };
 		2267150021AD1F0E006AEF16 /* ButterflyFooterAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButterflyFooterAnimator.swift; sourceTree = "<group>"; };
+		2267150221AD2AF7006AEF16 /* AliyunEmasServices-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "AliyunEmasServices-Info.plist"; sourceTree = "<group>"; };
+		2267150421AD2FA2006AEF16 /* Butterfly-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Butterfly-Bridging-Header.h"; path = "Butterfly/Butterfly-Bridging-Header.h"; sourceTree = "<group>"; };
 		22ABC2F121909F0C006062BC /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		22ABC2F42191376B006062BC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		22ABC2F6219137D6006062BC /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
@@ -164,6 +167,7 @@
 		22200303218EC6A900481176 = {
 			isa = PBXGroup;
 			children = (
+				2267150421AD2FA2006AEF16 /* Butterfly-Bridging-Header.h */,
 				22ABC2F6219137D6006062BC /* .swiftlint.yml */,
 				22ABC2F121909F0C006062BC /* .gitignore */,
 				2220030E218EC6A900481176 /* Butterfly */,
@@ -205,6 +209,7 @@
 				22200319218EC6AB00481176 /* Assets.xcassets */,
 				2220031B218EC6AB00481176 /* LaunchScreen.storyboard */,
 				2220031E218EC6AB00481176 /* Info.plist */,
+				2267150221AD2AF7006AEF16 /* AliyunEmasServices-Info.plist */,
 				22200316218EC6A900481176 /* Butterfly.xcdatamodeld */,
 			);
 			path = Butterfly;
@@ -381,6 +386,7 @@
 				2220030A218EC6A900481176 /* Resources */,
 				225E46FB2190808A005F5249 /* ShellScript */,
 				FCCFEEBC2B0681443AED2DF4 /* [CP] Embed Pods Frameworks */,
+				72E563B6351966D60E1FEB56 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -475,6 +481,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2267150321AD2AF7006AEF16 /* AliyunEmasServices-Info.plist in Resources */,
 				22ABC2F7219137D6006062BC /* .swiftlint.yml in Resources */,
 				22ABC2F221909F0C006062BC /* .gitignore in Resources */,
 				2220031D218EC6AB00481176 /* LaunchScreen.storyboard in Resources */,
@@ -512,6 +519,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		72E563B6351966D60E1FEB56 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Butterfly/Pods-Butterfly-resources.sh",
+				"${PODS_ROOT}/AlicloudFeedback/feedback/YWFeedbackBundle.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/YWFeedbackBundle.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Butterfly/Pods-Butterfly-resources.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 		DB89F0C51C1745127C36F2D5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -796,6 +821,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.woodystudio.Butterfly;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Butterfly/Butterfly-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -816,6 +842,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.woodystudio.Butterfly;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Butterfly/Butterfly-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

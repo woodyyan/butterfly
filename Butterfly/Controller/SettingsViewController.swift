@@ -14,6 +14,15 @@ class SettingsViewController: UITableViewController {
     private let viewModel: SettingsViewModel = ViewModelFactory.shared.create()
     
 //    private let feedbackKit = BCFeedbackKit(appKey: GlobleConfigs.aliyunAppKey, appSecret: GlobleConfigs.aliyunAppSecret)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        ALBBMANPageHitHelper.getInstance()?.pageAppear(self)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        ALBBMANPageHitHelper.getInstance()?.pageDisAppear(self)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
