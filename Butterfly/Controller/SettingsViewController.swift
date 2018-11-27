@@ -13,7 +13,8 @@ class SettingsViewController: UITableViewController {
     
     private let viewModel: SettingsViewModel = ViewModelFactory.shared.create()
     
-//    private let feedbackKit = BCFeedbackKit(appKey: GlobleConfigs.aliyunAppKey, appSecret: GlobleConfigs.aliyunAppSecret)
+    private let feedbackKit = BCFeedbackKit(appKey: "25334645", appSecret: "49b52bef285ff074ee2249227f710eb6")
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         ALBBMANPageHitHelper.getInstance()?.pageAppear(self)
@@ -136,18 +137,18 @@ extension SettingsViewController {
     }
     
     private func feedback() {
-//        feedbackKit?.extInfo = [
-//            "app_version": VersionUtils.getCurrentVersion(),
-//            "device_model": UIDevice.current.model
-//        ]
-//        feedbackKit?.makeFeedbackViewController(completionBlock: { (controller, error) in
-//            print(error ?? "")
-//            if let feedbackController = controller {
-//                self.navigationController?.pushViewController(feedbackController, animated: true)
-//                feedbackController.closeBlock = { controller in
-//                    controller?.navigationController?.popViewController(animated: true)
-//                }
-//            }
-//        })
+        feedbackKit?.extInfo = [
+            "app_version": viewModel.getVersion(),
+            "device_model": UIDevice.current.model
+        ]
+        feedbackKit?.makeFeedbackViewController(completionBlock: { (controller, error) in
+            print(error ?? "")
+            if let feedbackController = controller {
+                self.navigationController?.pushViewController(feedbackController, animated: true)
+                feedbackController.closeBlock = { controller in
+                    controller?.navigationController?.popViewController(animated: true)
+                }
+            }
+        })
     }
 }
