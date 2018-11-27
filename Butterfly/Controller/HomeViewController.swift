@@ -16,6 +16,7 @@ class HomeViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.viewModel.delegate = self
         initUI()
     }
     
@@ -44,12 +45,9 @@ class HomeViewController: UITableViewController {
     private func initPullToRefresh() {
         self.tableView.es.addPullToRefresh {
             [unowned self] in
-            /// 在这里做刷新相关事件
-            /// ...
-            /// 如果你的刷新事件成功，设置completion自动重置footer的状态
-            self.tableView.es.stopPullToRefresh(ignoreDate: true)
+            self.viewModel.fetchFromServer()
             /// 设置ignoreFooter来处理不需要显示footer的情况
-            self.tableView.es.stopPullToRefresh(ignoreDate: true, ignoreFooter: false)
+//            self.tableView.es.stopPullToRefresh(ignoreDate: true, ignoreFooter: false)
         }
         
         self.tableView.es.addInfiniteScrolling {
@@ -110,5 +108,14 @@ extension HomeViewController: ImageScrollTableCellDelegate {
         pictureViewController.viewModel.isFromFav = false
         pictureViewController.viewModel.currentSelected = selected
         self.navigationController?.pushViewController(pictureViewController, animated: true)
+    }
+}
+
+extension HomeViewController: FetchButterflyDelegate {
+    func fetchButterfly(viewModel: HomeViewModel, success: Bool) {
+        self.tableView.es.stopPullToRefresh(ignoreDate: true)
+        if success {
+            self.tableView.reloadData()
+        }
     }
 }

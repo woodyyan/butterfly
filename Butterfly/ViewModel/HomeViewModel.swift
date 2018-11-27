@@ -14,6 +14,7 @@ class HomeViewModel: BaseViewModel {
     private var storage: ButterflyStorage!
     private var service: ButterflyService!
     
+    var delegate: FetchButterflyDelegate?
     var butterflySections = [ButterflySection]()
     
     init(storage: ButterflyStorage, service: ButterflyService) {
@@ -35,11 +36,12 @@ class HomeViewModel: BaseViewModel {
         }
     }
     
-    private func fetchFromServer() {
+    func fetchFromServer() {
         service.fetchNewButterflies { (success) in
             if success {
                 self.fetchFromLocal()
             }
+            self.delegate?.fetchButterfly(viewModel: self, success: success)
         }
     }
         
@@ -61,4 +63,8 @@ class HomeViewModel: BaseViewModel {
 //            }
 //            butterflySets.append(dailySet)
 //        }
+}
+
+protocol FetchButterflyDelegate: NSObjectProtocol {
+    func fetchButterfly(viewModel: HomeViewModel, success: Bool)
 }
