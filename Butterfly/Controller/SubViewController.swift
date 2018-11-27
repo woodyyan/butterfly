@@ -55,7 +55,7 @@ extension SubViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 12
+        return 13
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -106,9 +106,29 @@ extension SubViewController {
             return getDescriptionDetailCell()
         case 10:
             return getTermButtonsCell()
+        case 11:
+            return getRestorPurchaseButtonsCell()
         default:
             return UITableViewCell()
         }
+    }
+    
+    private func getRestorPurchaseButtonsCell() -> UITableViewCell {
+        let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
+        
+        let restoreButton = UIButton(type: UIButton.ButtonType.system)
+        
+        restoreButton.setAttributedTitle("恢复购买".toUnderlineString(UIColor.gray), for: UIControl.State.normal)
+        restoreButton.setTitleColor(UIColor.gray, for: UIControl.State.normal)
+        restoreButton.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+        restoreButton.addTarget(self, action: #selector(SubViewController.restorePurchase(_:)), for: UIControl.Event.touchUpInside)
+        
+        cell.addSubview(restoreButton)
+        restoreButton.snp.makeConstraints { (make) in
+            make.centerY.equalToSuperview()
+            make.centerX.equalToSuperview()
+        }
+        return cell
     }
     
     private func getTermButtonsCell() -> UITableViewCell {
@@ -140,6 +160,19 @@ extension SubViewController {
     
     @objc func openTermsPage(_ sender: UIButton) {
         print(23)
+    }
+    
+    @objc func restorePurchase(_ sender: UIButton) {
+        indicator.startAnimating()
+        SubscriptionManager.shared.restorePurchase { (success, message) in
+            self.indicator.stopAnimating()
+            if success {
+                MessageBox.show("恢复成功")
+                self.delegate?.subscribed()
+            } else {
+                MessageBox.show(message)
+            }
+        }
     }
     
     private func getDescriptionDetailCell() -> UITableViewCell {

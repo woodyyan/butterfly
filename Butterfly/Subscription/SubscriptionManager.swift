@@ -39,6 +39,25 @@ class SubscriptionManager {
         return result == SubscriptionType.monthly.rawValue || result == SubscriptionType.yearly.rawValue
     }
     
+    func restorePurchase(completion: @escaping (Bool, String) -> Void) {
+        SwiftyStoreKit.restorePurchases(atomically: true) { results in
+            if !results.restoreFailedPurchases.isEmpty {
+                var message = "恢复失败。"
+                if let error = results.restoreFailedPurchases.first?.1 {
+                    message = "\(message)\(error)"
+                }
+                completion(false, message)
+            } else if !results.restoredPurchases.isEmpty {
+                if let productId = results.restoredPurchases.first?.productId {
+                    self.setSubscriptionStatus(productId: productId)
+                }
+                completion(true, "")
+            } else {
+                completion(false, "没有可恢复的购买")
+            }
+        }
+    }
+    
     // swiftlint:disable cyclomatic_complexity
     func purchase(type: SubscriptionType, completion: @escaping (Bool, String) -> Void) {
         let productId = type == SubscriptionType.monthly ? Configs.memberMonthlyProductId : Configs.memberYearlyProductId
