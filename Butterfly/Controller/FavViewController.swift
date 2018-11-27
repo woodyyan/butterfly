@@ -51,28 +51,16 @@ class FavViewController: UICollectionViewController {
 
 extension FavViewController {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let favCount = viewModel.favs.count
-        if favCount == 0 {
-            return 0
-        }
-        if section < getSectionNumber(favCount: favCount) - 1 {
+        let completedSection = viewModel.favs.count/defaultRowNumber
+        if section < completedSection {
             return defaultRowNumber
-        } else if favCount%defaultRowNumber == 0 {
-            return defaultRowNumber
-        }
-        return favCount%defaultRowNumber
-    }
-    
-    private func getSectionNumber(favCount: Int) -> Int {
-        if favCount % defaultRowNumber == 0 {
-            return favCount/defaultRowNumber
         } else {
-            return favCount/defaultRowNumber + 1
+            return viewModel.favs.count%defaultRowNumber
         }
     }
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return getSectionNumber(favCount: self.viewModel.favs.count)
+        return Int(ceil(CGFloat(self.viewModel.favs.count) / 3))
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

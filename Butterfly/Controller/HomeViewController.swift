@@ -59,6 +59,7 @@ class HomeViewController: UITableViewController {
             /// 如果你的加载更多事件成功，调用es_stopLoadingMore()重置footer状态
             self.tableView.es.stopLoadingMore()
             /// 通过es_noticeNoMoreData()设置footer暂无数据状态
+            
             self.tableView.es.noticeNoMoreData()
         }
     }
