@@ -110,7 +110,6 @@ class PictureViewController: UIViewController {
         
         let blurEffect = UIBlurEffect(style: .dark)
         let blurView = UIVisualEffectView(effect: blurEffect)
-        blurView.alpha = 0.9
         blurView.frame = self.view.bounds
         imageView.addSubview(blurView)
         
