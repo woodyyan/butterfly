@@ -64,12 +64,8 @@ class ImageScrollTalbeCell: UITableViewCell {
         var index = 0
         for pic in butterfly.pictures {
             var imageView = TapImageView(image: #imageLiteral(resourceName: "butterflyNoImage"))
-            if let image = ImageCache.default.retrieveImageInDiskCache(forKey: pic) {
-                imageView = TapImageView(image: image)
-            } else {
-                imageView.kf.setImage(with: URL(string: pic)!, placeholder: #imageLiteral(resourceName: "butterflyNoImage"))
-            }
-            
+            imageView.kf.setImage(with: URL(string: pic)!, placeholder: #imageLiteral(resourceName: "butterflyNoImage"))
+
             imageView.picture = pic
             imageView.delegate = self
             imageView.frame = CGRect(x: index*(Configs.imageWidth + margin) + margin, y: margin, width: Configs.imageWidth, height: Configs.imageHeight)
