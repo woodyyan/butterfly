@@ -155,7 +155,7 @@ extension SubViewController {
         privacyPolicyButton.setAttributedTitle("隐私政策".toUnderlineString(UIColor.gray), for: UIControl.State.normal)
         privacyPolicyButton.setTitleColor(UIColor.gray, for: UIControl.State.normal)
         privacyPolicyButton.titleLabel?.font = UIFont.systemFont(ofSize: 14)
-        privacyPolicyButton.addTarget(self, action: #selector(SubViewController.openTermsPage(_:)), for: UIControl.Event.touchUpInside)
+        privacyPolicyButton.addTarget(self, action: #selector(SubViewController.openPrivacyPolicy(_:)), for: UIControl.Event.touchUpInside)
         
         let stackView = UIStackView(arrangedSubviews: [termsOfUseButton, privacyPolicyButton])
         stackView.axis = .horizontal
@@ -168,8 +168,18 @@ extension SubViewController {
         return cell
     }
     
+    @objc func openPrivacyPolicy(_ sender: UIButton) {
+        let controller = WebViewController()
+        controller.title = "服务条款"
+        controller.resource = "PrivacyPolicy"
+        self.present(controller, animated: true, completion: nil)
+    }
+    
     @objc func openTermsPage(_ sender: UIButton) {
-        print(23)
+        let controller = WebViewController()
+        controller.title = "隐私政策"
+        controller.resource = "UserAgreement"
+        self.present(controller, animated: true, completion: nil)
     }
     
     @objc func restorePurchase(_ sender: UIButton) {

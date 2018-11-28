@@ -20,6 +20,9 @@
 		226714FF21AD169E006AEF16 /* ButterflyRefreshAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226714FE21AD169E006AEF16 /* ButterflyRefreshAnimator.swift */; };
 		2267150121AD1F0E006AEF16 /* ButterflyFooterAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2267150021AD1F0E006AEF16 /* ButterflyFooterAnimator.swift */; };
 		2267150321AD2AF7006AEF16 /* AliyunEmasServices-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2267150221AD2AF7006AEF16 /* AliyunEmasServices-Info.plist */; };
+		2267150721AE630E006AEF16 /* UserAgreement.html in Resources */ = {isa = PBXBuildFile; fileRef = 2267150621AE630E006AEF16 /* UserAgreement.html */; };
+		2267150921AE6A36006AEF16 /* PrivacyPolicy.html in Resources */ = {isa = PBXBuildFile; fileRef = 2267150821AE6A36006AEF16 /* PrivacyPolicy.html */; };
+		2267150B21AE6A7E006AEF16 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2267150A21AE6A7E006AEF16 /* WebViewController.swift */; };
 		22ABC2F221909F0C006062BC /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 22ABC2F121909F0C006062BC /* .gitignore */; };
 		22ABC2F52191376B006062BC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ABC2F42191376B006062BC /* HomeViewController.swift */; };
 		22ABC2F7219137D6006062BC /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 22ABC2F6219137D6006062BC /* .swiftlint.yml */; };
@@ -97,6 +100,9 @@
 		2267150021AD1F0E006AEF16 /* ButterflyFooterAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButterflyFooterAnimator.swift; sourceTree = "<group>"; };
 		2267150221AD2AF7006AEF16 /* AliyunEmasServices-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "AliyunEmasServices-Info.plist"; sourceTree = "<group>"; };
 		2267150421AD2FA2006AEF16 /* Butterfly-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Butterfly-Bridging-Header.h"; path = "Butterfly/Butterfly-Bridging-Header.h"; sourceTree = "<group>"; };
+		2267150621AE630E006AEF16 /* UserAgreement.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = UserAgreement.html; sourceTree = "<group>"; };
+		2267150821AE6A36006AEF16 /* PrivacyPolicy.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = PrivacyPolicy.html; sourceTree = "<group>"; };
+		2267150A21AE6A7E006AEF16 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		22ABC2F121909F0C006062BC /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		22ABC2F42191376B006062BC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		22ABC2F6219137D6006062BC /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
@@ -192,6 +198,7 @@
 		2220030E218EC6A900481176 /* Butterfly */ = {
 			isa = PBXGroup;
 			children = (
+				2267150521AE62DE006AEF16 /* Resource */,
 				22ABC34821A3BCAC006062BC /* Subscription */,
 				22ABC34521A3B9F4006062BC /* View */,
 				22ABC33821A288D1006062BC /* Entity */,
@@ -233,6 +240,15 @@
 			path = ButterflyUITests;
 			sourceTree = "<group>";
 		};
+		2267150521AE62DE006AEF16 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				2267150621AE630E006AEF16 /* UserAgreement.html */,
+				2267150821AE6A36006AEF16 /* PrivacyPolicy.html */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		22ABC2F32191374E006062BC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -242,6 +258,7 @@
 				22ABC31D2196DBB2006062BC /* FavViewController.swift */,
 				22ABC3242196E624006062BC /* AboutViewController.swift */,
 				22ABC3262196ECB9006062BC /* SubViewController.swift */,
+				2267150A21AE6A7E006AEF16 /* WebViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -484,8 +501,10 @@
 				2267150321AD2AF7006AEF16 /* AliyunEmasServices-Info.plist in Resources */,
 				22ABC2F7219137D6006062BC /* .swiftlint.yml in Resources */,
 				22ABC2F221909F0C006062BC /* .gitignore in Resources */,
+				2267150921AE6A36006AEF16 /* PrivacyPolicy.html in Resources */,
 				2220031D218EC6AB00481176 /* LaunchScreen.storyboard in Resources */,
 				2220031A218EC6AB00481176 /* Assets.xcassets in Resources */,
+				2267150721AE630E006AEF16 /* UserAgreement.html in Resources */,
 				22200315218EC6A900481176 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -620,6 +639,7 @@
 				22ABC34A21A3BCD4006062BC /* SubscriptionManager.swift in Sources */,
 				22ABC30E21943A52006062BC /* Section.swift in Sources */,
 				22ABC2FA2191398A006062BC /* UIColorExtension.swift in Sources */,
+				2267150B21AE6A7E006AEF16 /* WebViewController.swift in Sources */,
 				22ABC305219438A7006062BC /* ViewModelFactory.swift in Sources */,
 				22ABC33521A263A6006062BC /* CoreStorage.swift in Sources */,
 				22ABC3092194394C006062BC /* SettingsViewModel.swift in Sources */,
