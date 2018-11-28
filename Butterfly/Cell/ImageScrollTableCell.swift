@@ -63,7 +63,7 @@ class ImageScrollTalbeCell: UITableViewCell {
         let margin = 10
         var index = 0
         for pic in butterfly.pictures {
-            var imageView = TapImageView(image: #imageLiteral(resourceName: "butterflyNoImage"))
+            let imageView = TapImageView(image: #imageLiteral(resourceName: "butterflyNoImage"))
             imageView.kf.setImage(with: URL(string: pic)!, placeholder: #imageLiteral(resourceName: "butterflyNoImage"))
 
             imageView.picture = pic

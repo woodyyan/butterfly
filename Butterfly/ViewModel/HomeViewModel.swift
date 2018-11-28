@@ -30,7 +30,8 @@ class HomeViewModel: BaseViewModel {
     private func fetchFromLocal() {
         let butterflies = storage.fetch()
         let dic = Dictionary(grouping: butterflies, by: { $0.createdDate.toOrderNumber() })
-        self.butterflySections = dic.reversed().map { (arg) -> ButterflySection in
+
+        self.butterflySections = dic.sorted { $0.key > $1.key }.map { (arg) -> ButterflySection in
             let (_, value) = arg
             return ButterflySection(title: value.first!.createdDate.toTitleString(), butterflies: value)
         }
