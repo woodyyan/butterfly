@@ -9,6 +9,14 @@
 import Foundation
 
 extension Date {
+    
+    func toOrderNumber() -> Int {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyyMMdd"
+        let dateString = formatter.string(from: self)
+        return Int(dateString)!
+    }
+    
     func toTitleString() -> String {
         // 今日  2018.Oct.1
         if checkIsToday() {
