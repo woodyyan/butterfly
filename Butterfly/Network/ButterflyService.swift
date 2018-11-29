@@ -41,10 +41,13 @@ class ButterflyService {
     private func saveToLocal(data: ButterflyData) -> Bool {
         let context = CoreStorage.shared.persistentContainer.viewContext
         let storage = ButterflyStorage(context: context)
-        var success = false
+        var successCount = 0
         for butterfly in data.butterflies {
-            success = storage.save(butterfly: butterfly)
+            let success = storage.save(butterfly: butterfly)
+            if success {
+                successCount += 1
+            }
         }
-        return success
+        return successCount > 0
     }
 }
