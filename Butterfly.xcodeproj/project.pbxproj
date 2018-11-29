@@ -23,6 +23,7 @@
 		2267150721AE630E006AEF16 /* UserAgreement.html in Resources */ = {isa = PBXBuildFile; fileRef = 2267150621AE630E006AEF16 /* UserAgreement.html */; };
 		2267150921AE6A36006AEF16 /* PrivacyPolicy.html in Resources */ = {isa = PBXBuildFile; fileRef = 2267150821AE6A36006AEF16 /* PrivacyPolicy.html */; };
 		2267150B21AE6A7E006AEF16 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2267150A21AE6A7E006AEF16 /* WebViewController.swift */; };
+		2267150D21B00504006AEF16 /* BundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2267150C21B00504006AEF16 /* BundleExtension.swift */; };
 		22ABC2F221909F0C006062BC /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 22ABC2F121909F0C006062BC /* .gitignore */; };
 		22ABC2F52191376B006062BC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ABC2F42191376B006062BC /* HomeViewController.swift */; };
 		22ABC2F7219137D6006062BC /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 22ABC2F6219137D6006062BC /* .swiftlint.yml */; };
@@ -103,6 +104,7 @@
 		2267150621AE630E006AEF16 /* UserAgreement.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = UserAgreement.html; sourceTree = "<group>"; };
 		2267150821AE6A36006AEF16 /* PrivacyPolicy.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = PrivacyPolicy.html; sourceTree = "<group>"; };
 		2267150A21AE6A7E006AEF16 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		2267150C21B00504006AEF16 /* BundleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleExtension.swift; sourceTree = "<group>"; };
 		22ABC2F121909F0C006062BC /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		22ABC2F42191376B006062BC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		22ABC2F6219137D6006062BC /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
@@ -272,6 +274,7 @@
 				22ABC33D21A28E9B006062BC /* NSManagedObjectContextExtension.swift */,
 				22ABC34121A2A070006062BC /* NSManagedObjectExtension.swift */,
 				22ABC34321A2BF95006062BC /* DateExtension.swift */,
+				2267150C21B00504006AEF16 /* BundleExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -651,6 +654,7 @@
 				22ABC33721A28067006062BC /* ButterflyStorage.swift in Sources */,
 				226714FB21A3EEDB006AEF16 /* FavStorage.swift in Sources */,
 				22ABC31621955423006062BC /* Butterfly.swift in Sources */,
+				2267150D21B00504006AEF16 /* BundleExtension.swift in Sources */,
 				22ABC31A2195C938006062BC /* PictureViewModel.swift in Sources */,
 				22ABC2F52191376B006062BC /* HomeViewController.swift in Sources */,
 				22ABC34721A3B9FF006062BC /* MessageBox.swift in Sources */,

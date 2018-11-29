@@ -51,7 +51,7 @@ class AboutViewController: UIViewController {
         }
         
         let version = UILabel()
-        version.text = "Version 2.2"
+        version.text = "Version \(Bundle.main.getVersion())"
         version.textColor = UIColor.gray
         version.font = UIFont.systemFont(ofSize: 12)
         self.view.addSubview(version)
@@ -61,6 +61,7 @@ class AboutViewController: UIViewController {
         }
         
         let termsOfUse = UIButton(type: UIButton.ButtonType.system)
+        termsOfUse.addTarget(self, action: #selector(AboutViewController.openTermsPage(_:)), for: UIControl.Event.touchUpInside)
         termsOfUse.setTitle("使用条款", for: UIControl.State.normal)
         self.view.addSubview(termsOfUse)
         termsOfUse.snp.makeConstraints { (make) in
@@ -71,6 +72,7 @@ class AboutViewController: UIViewController {
         }
         
         let privacyPolicy = UIButton(type: UIButton.ButtonType.system)
+        privacyPolicy.addTarget(self, action: #selector(AboutViewController.openPrivacyPolicy(_:)), for: UIControl.Event.touchUpInside)
         privacyPolicy.setTitle("隐私政策", for: UIControl.State.normal)
         self.view.addSubview(privacyPolicy)
         privacyPolicy.snp.makeConstraints { (make) in
@@ -89,5 +91,19 @@ class AboutViewController: UIViewController {
             make.centerX.equalToSuperview()
             make.bottom.equalToSuperview().offset(-30)
         }
+    }
+    
+    @objc func openPrivacyPolicy(_ sender: UIButton) {
+        let controller = WebViewController()
+        controller.title = "服务条款"
+        controller.resource = "PrivacyPolicy"
+        self.present(controller, animated: true, completion: nil)
+    }
+    
+    @objc func openTermsPage(_ sender: UIButton) {
+        let controller = WebViewController()
+        controller.title = "隐私政策"
+        controller.resource = "UserAgreement"
+        self.present(controller, animated: true, completion: nil)
     }
 }

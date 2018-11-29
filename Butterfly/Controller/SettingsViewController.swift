@@ -138,7 +138,7 @@ extension SettingsViewController {
     
     private func feedback() {
         feedbackKit?.extInfo = [
-            "app_version": viewModel.getVersion(),
+            "app_version": Bundle.main.getVersion(),
             "device_model": UIDevice.current.model
         ]
         feedbackKit?.makeFeedbackViewController(completionBlock: { (controller, error) in

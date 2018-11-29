@@ -50,15 +50,8 @@ class SettingsViewModel: BaseViewModel {
         
         var aboutSection = Section()
         var aboutItem = SettingItem(title: "关于")
-        aboutItem.detailText = "V \(getVersion())"
+        aboutItem.detailText = "V \(Bundle.main.getVersion())"
         aboutSection.items.append(aboutItem)
         settings.sections.append(aboutSection)
-    }
-    
-    func getVersion() -> String {
-        guard let infoDic = Bundle.main.infoDictionary else {return ""}
-        guard let currentVersion = infoDic["CFBundleShortVersionString"] as? String else {return ""}
-        //        let buildVersion = infoDic["CFBundleVersion"] as? String
-        return currentVersion
     }
 }
