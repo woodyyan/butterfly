@@ -23,7 +23,8 @@ class SettingsViewModel: BaseViewModel {
         
         var subscriptionSection = Section()
         var subscriptionItem = SettingItem(title: "订阅")
-        subscriptionItem.detailText = "过期"
+        let isSubscribed = SubscriptionManager.shared.isSubscribed()
+        subscriptionItem.detailText = isSubscribed ? "已订阅" : "未订阅"
         subscriptionItem.icon = "subscription"
         subscriptionSection.items.append(subscriptionItem)
         settings.sections.append(subscriptionSection)
